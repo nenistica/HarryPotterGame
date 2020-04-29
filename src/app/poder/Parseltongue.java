@@ -1,4 +1,4 @@
 package app.poder;
 
-public class Parseltongue extends Poder {
+public class ParselTongue extends Poder {
 }

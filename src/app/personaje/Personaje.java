@@ -1,6 +1,6 @@
 package app.personaje;
 
-abstract class Personaje {
+public abstract class Personaje {
     String nombre;
 
     int salud;
