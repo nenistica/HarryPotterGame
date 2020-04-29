@@ -1,5 +1,7 @@
 package app.personaje;
 
+package app.artefacto;
+
 import java.util.List;
 
 import app.interfaces.IHaceMagia;

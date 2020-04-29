@@ -1,6 +1,6 @@
 package app.poder;
 
-abstract class Poder {
+public class Poder {
 
     String nombrePoder;
 

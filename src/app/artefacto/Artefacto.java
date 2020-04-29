@@ -1,8 +1,9 @@
 package app.artefacto;
 
 import app.interfaces.IEsMagico;
+import app.poder.Poder;
 
-abstract class Artefacto implements IEsMagico {
+public class Artefacto implements IEsMagico {
 
     String nombreArtefacto;
 
