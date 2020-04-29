@@ -3,6 +3,7 @@ package app.personaje;
 import java.util.List;
 
 import app.interfaces.IHaceMagia;
+import app.transporte.Escoba;
 
 public class Wizard extends Persona implements IHaceMagia {
 
