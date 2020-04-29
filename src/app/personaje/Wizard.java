@@ -2,7 +2,10 @@ package app.personaje;
 
 import java.util.List;
 
+import app.artefacto.Artefacto;
 import app.interfaces.IHaceMagia;
+import app.poder.Poder;
+import app.transporte.Escoba;
 
 public class Wizard extends Persona implements IHaceMagia {
 
@@ -19,5 +22,7 @@ public class Wizard extends Persona implements IHaceMagia {
     public boolean magoOscuro(){
         return false;
     }
+
+  
 
 }
