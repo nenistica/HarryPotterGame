@@ -1,4 +1,16 @@
 package app.personaje;
 
-public class Personaje {
+abstract class Personaje {
+    String nombre;
+
+    int salud;
+    int edad;
+
+    boolean estaVivo(){
+        return true;
+    }
+
+
+
+
 }

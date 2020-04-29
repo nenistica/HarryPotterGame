@@ -1,4 +1,4 @@
 package app.poder;
 
-public class Metamorfosis {
+public class Metamorfosis extends Poder{
 }

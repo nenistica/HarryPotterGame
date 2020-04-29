@@ -1,4 +1,6 @@
 package app.artefacto;
 
-public class Horrocrux {
+import app.interfaces.IReliquiaMuerte;
+
+public class Horrocrux extends Artefacto implements IReliquiaMuerte {
 }

@@ -1,4 +1,6 @@
 package app.transporte;
 
-public class Escoba {
+import app.interfaces.IEsMagico;
+
+public class Escoba extends Transporte implements IEsMagico {
 }

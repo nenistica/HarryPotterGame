@@ -1,4 +1,16 @@
 package app.poder.hechizo;
 
-public class Hechizo {
+abstract class Hechizo {
+
+    public boolean esOscuro(){
+        return true;
+    }
+
+    int nivelDanio;
+
+    int nivelCuracion;
+
+    int energiaMagicaHechizo;
+
+
 }

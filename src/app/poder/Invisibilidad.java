@@ -1,4 +1,4 @@
 package app.poder;
 
-public class Invisibilidad {
+public class Invisibilidad extends Poder {
 }

@@ -1,4 +1,11 @@
 package app.poder;
 
-public class Poder {
+abstract class Poder {
+
+    String nombrePoder;
+
+    String descripcionPoder;
+
+    Integer nroPoder;
+
 }

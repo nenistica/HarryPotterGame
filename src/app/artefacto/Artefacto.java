@@ -1,4 +1,15 @@
 package app.artefacto;
 
-public class Artefacto {
+import app.interfaces.IEsMagico;
+
+abstract class Artefacto implements IEsMagico {
+
+    String nombreArtefacto;
+
+    double amplificadorDeDanio;
+
+    double amplificadorDeCuracion;
+    
+    Poder poderArtefacto;
+
 }

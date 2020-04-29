@@ -1,4 +1,6 @@
 package app.artefacto;
 
-public class CapaInvisibilidad {
+import app.interfaces.IReliquiaMuerte;
+
+public class CapaInvisibilidad extends Artefacto implements IReliquiaMuerte {
 }

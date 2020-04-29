@@ -1,4 +1,6 @@
 package app.transporte;
 
-public class TrenExpressoHogwarts {
+import app.interfaces.IEsMagico;
+
+public class TrenExpressoHogwarts extends Transporte implements IEsMagico {
 }

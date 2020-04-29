@@ -1,4 +1,4 @@
-package app.artefacto;
+package app.interfaces;
 
 public interface IReliquiaMuerte {
 }

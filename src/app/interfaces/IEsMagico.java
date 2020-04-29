@@ -1,4 +1,4 @@
-package app.transporte;
+package app.interfaces;
 
 public interface IEsMagico {
 }
