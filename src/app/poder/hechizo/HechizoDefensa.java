@@ -1,6 +1,7 @@
 package app.poder.hechizo;
 
 public class HechizoDefensa {
+    
     public static class Expelliarmus {
     }
 

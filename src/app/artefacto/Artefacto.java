@@ -19,7 +19,7 @@ public class Artefacto implements IEsMagico {
         this.poderArtefacto = poderArtefacto;
     }
 
-    // Getter & Setter
+    // Getters & Setters 
     public String getNombreArtefacto() {
         return nombreArtefacto;
     }

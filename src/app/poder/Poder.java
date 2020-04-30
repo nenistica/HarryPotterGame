@@ -1,11 +1,11 @@
 package app.poder;
 
 public class Poder {
-
+     //Attr 
     String nombrePoder;
     String descripcionPoder;
     Integer nroPoder;
-    
+    //Constructor 
     public Poder(String nombrePoder, String descripcionPoder, Integer nroPoder) {
         this.nombrePoder = nombrePoder;
         this.descripcionPoder = descripcionPoder;
