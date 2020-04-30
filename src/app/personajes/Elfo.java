@@ -1,6 +1,5 @@
 package app.personajes;
 
-
 import java.util.List;
 
 import app.artefactos.Artefacto;
@@ -9,18 +8,15 @@ import app.poderes.hechizos.Hechizo;
 
 public class Elfo extends Criatura implements IHaceMagia {
 
-   private int energiaMagica;
-
     Artefacto artefacto;
 
-    List<Hechizo>hechizo;
+    List<Hechizo> hechizo;
 
-    public int getEnergiaMagica() {
-        return energiaMagica;
+    public void getEnergiaMagica(int energiaMagica) {
+
     }
 
     public void setEnergiaMagica(int energiaMagica) {
-        this.energiaMagica = energiaMagica;
     }
 
     public Artefacto getArtefacto() {
@@ -39,7 +35,15 @@ public class Elfo extends Criatura implements IHaceMagia {
         this.hechizo = hechizo;
     }
 
+    @Override
+    public void getEnergiaMagica() {
 
+    }
 
+    @Override
+    public void setEnergiaMagica() {
+        // TODO Auto-generated method stub
+
+    }
 
 }

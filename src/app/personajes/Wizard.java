@@ -20,10 +20,18 @@ public class Wizard extends Persona implements IHaceMagia {
 
     Artefacto artefacto;
 
-    public boolean magoOscuro(){
+    public boolean magoOscuro() {
         return false;
     }
 
-  
+    @Override
+    public void getEnergiaMagica() {
+
+    }
+
+    @Override
+    public void setEnergiaMagica() {
+
+    }
 
 }
