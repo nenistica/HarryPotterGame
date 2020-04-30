@@ -2,9 +2,9 @@ package app.interfaces;
 
 public interface IHaceMagia {
 
-   public getEnergiaMagica();
+   public void getEnergiaMagica();
        
 
 
-    public setEnergiaMagica();
+    public void setEnergiaMagica();
 }

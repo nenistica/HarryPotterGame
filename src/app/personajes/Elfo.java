@@ -1,6 +1,5 @@
 package app.personajes;
 
-package app.artefactos;
 
 import java.util.List;
 
