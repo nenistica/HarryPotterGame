@@ -1,13 +1,18 @@
 package app.personajes;
 
-abstract class Personaje {
+public abstract class Personaje {
     String nombre;
 
     int salud;
     int edad;
 
     boolean estaVivo(){
-        return true;
+        if (salud > 0){
+            return true;
+        }
+        else{
+            return false;
+        }
     }
 
 
