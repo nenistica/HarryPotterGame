@@ -1,5 +1,5 @@
 package app.transportes;
 
-abstract class Transporte {
+public abstract class Transporte {
 
 }
