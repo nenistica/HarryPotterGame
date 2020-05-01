@@ -12,13 +12,6 @@ public class Elfo extends Criatura implements IHaceMagia {
 
     List<Hechizo> hechizo;
 
-    public void getEnergiaMagica(int energiaMagica) {
-
-    }
-
-    public void setEnergiaMagica(int energiaMagica) {
-    }
-
     public Artefacto getArtefacto() {
         return artefacto;
     }
@@ -36,12 +29,14 @@ public class Elfo extends Criatura implements IHaceMagia {
     }
 
     @Override
-    public void getEnergiaMagica() {
+    public int getEnergiaMagica() {
+        return energiaMagica;
 
     }
 
     @Override
-    public void setEnergiaMagica() {
+    public void setEnergiaMagica(int energiamagica) {
+        this.energiaMagica = energiamagica;
         // TODO Auto-generated method stub
 
     }
