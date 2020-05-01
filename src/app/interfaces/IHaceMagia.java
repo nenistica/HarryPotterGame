@@ -15,7 +15,7 @@ public interface IHaceMagia {
 
     public void setPoder(Poder poder);
 
-    public Artefacto getArtefaco();
+    public Artefacto getArtefacto();
     
     public void aprender(Hechizo h);
 
