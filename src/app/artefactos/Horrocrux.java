@@ -10,4 +10,10 @@ public class Horrocrux extends Artefacto implements IReliquiaMuerte {
         super(nombreArtefacto, amplificadorDeDanio, amplificadorDeCuracion, poderArtefacto);
         // TODO Auto-generated constructor stub
     }
+
+    @Override
+    public boolean esReliquiaMuerte() {
+        // TODO Auto-generated method stub
+        return false;
+    }
 }
