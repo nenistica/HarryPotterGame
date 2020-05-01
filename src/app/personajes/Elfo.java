@@ -8,13 +8,18 @@ import app.poderes.Poder;
 import app.poderes.hechizos.Hechizo;
 
 public class Elfo extends Criatura implements IHaceMagia {
+    //Attr
+    public Artefacto artefacto;
+    public List<Hechizo> hechizo;
+    public int energiaMagica;
+    public Poder poderInicial;
 
-    Artefacto artefacto;
-
-    List<Hechizo> hechizo;
-
-    private int energiaMagica;
-
+    public Elfo(Artefacto artefacto, List<Hechizo> hechizo, int energiaMagica,Poder poderInicial) {
+        this.artefacto = artefacto;
+        this.hechizo = hechizo;
+        this.energiaMagica = energiaMagica;
+        this.poderInicial = poderInicial;
+    }
 
     public void setArtefacto(Artefacto artefacto) {
         this.artefacto = artefacto;
@@ -42,31 +47,29 @@ public class Elfo extends Criatura implements IHaceMagia {
 
     @Override
     public Poder getPoderInicial() {
-        // TODO Auto-generated method stub
-        return null;
+        return poderInicial;
     }
 
     @Override
     public void setPoder(Poder poder) {
-        // TODO Auto-generated method stub
+        this.poderInicial = poder;
 
     }
 
     @Override
-    public Artefacto getArtefaco() {
-        // TODO Auto-generated method stub
-        return null;
+    public Artefacto getArtefacto() {
+        return artefacto;
     }
 
     @Override
     public void aprender(Hechizo h) {
-        // TODO Auto-generated method stub
+        this.hechizo.add(h);
 
     }
 
     @Override
     public void atacar(Personaje personaje, Hechizo hechizo) {
-        // TODO Auto-generated method stub
+        // busca el nivelDanio de hechizo y se lo resta a la salud de personaje
 
     }
 
