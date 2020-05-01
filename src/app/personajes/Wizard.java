@@ -16,6 +16,11 @@ public class Wizard extends Persona implements IHaceMagia {
     Poder poderInicial;
     Artefacto artefacto;
 
+    public Wizard(String nombre, int salud, int edad) {
+        super(nombre, salud, edad);
+
+    }
+
     public boolean magoOscuro() {
         return false;
     }
@@ -59,7 +64,7 @@ public class Wizard extends Persona implements IHaceMagia {
 
     @Override
     public int getEnergiaMagica() {
-        
+
         return 0;
     }
 
