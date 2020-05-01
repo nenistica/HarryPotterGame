@@ -7,7 +7,7 @@ public class TrenExpressoHogwarts extends Transporte implements IEsMagico {
     @Override
     public boolean esInvisibleAMuggles() {
         
-        return false;
+        return true;
     }
 
     @Override
@@ -15,4 +15,6 @@ public class TrenExpressoHogwarts extends Transporte implements IEsMagico {
         
         return false;
     }
+
+    
 }
