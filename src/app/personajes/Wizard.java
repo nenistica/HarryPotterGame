@@ -21,13 +21,46 @@ public class Wizard extends Persona implements IHaceMagia {
     }
 
     @Override
-    public void getEnergiaMagica() {
+    public void setEnergiaMagica(int energiaMagica) {
 
     }
 
     @Override
-    public void setEnergiaMagica() {
+    public Poder getPoderInicial() {
 
+        return null;
+    }
+
+    @Override
+    public void setPoder(Poder poder) {
+
+    }
+
+    @Override
+    public Artefacto getArtefaco() {
+
+        return null;
+    }
+
+    @Override
+    public void aprender(Hechizo h) {
+
+    }
+
+    @Override
+    public void atacar(Personaje personaje, Hechizo hechizo) {
+
+    }
+
+    @Override
+    public void atacar(Personaje personaje, String hechizo) {
+
+    }
+
+    @Override
+    public int getEnergiaMagica() {
+        
+        return 0;
     }
 
 }

@@ -10,4 +10,10 @@ public class VaritaSauco extends Varita implements IReliquiaMuerte {
         super(nombreArtefacto, amplificadorDeDanio, amplificadorDeCuracion, poderArtefacto);
         
     }
+
+    @Override
+    public boolean esReliquiaMuerte() {
+        
+        return false;
+    }
 }
