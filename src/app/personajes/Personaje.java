@@ -1,8 +1,6 @@
 package app.personajes;
 
-import app.poderes.hechizos.Hechizo;
-
-public abstract class Personaje {
+public class Personaje {
     // Attr
     String nombre;
     int salud;
