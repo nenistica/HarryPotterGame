@@ -15,36 +15,40 @@ public class Wizard extends Persona implements IHaceMagia {
     Escoba escoba;
     Poder poderInicial;
     Artefacto artefacto;
+    boolean magoOscuro;
 
-    public Wizard(String nombre, int salud, int edad) {
+    public Wizard(String nombre, int salud, int edad, int energiaMagica, List<Hechizo> hechizo, Escoba escoba,
+    Poder poderInicial, Artefacto artefacto, boolean magoOscuro) {
         super(nombre, salud, edad);
-
-    }
-
-    public boolean magoOscuro() {
-        return false;
-    }
+        this.energiaMagica = energiaMagica;
+        this.hechizo = hechizo;
+        this.escoba = escoba;
+        this.poderInicial = poderInicial;
+        this.artefacto = artefacto;
+        this.magoOscuro = magoOscuro;
+}
 
     @Override
     public void setEnergiaMagica(int energiaMagica) {
+        this.energiaMagica = energiaMagica;
 
     }
 
     @Override
     public Poder getPoderInicial() {
-
-        return null;
+        return poderInicial;
     }
 
     @Override
     public void setPoder(Poder poder) {
+        this.poderInicial = poder;
 
     }
 
     @Override
-    public Artefacto getArtefaco() {
+    public Artefacto getArtefacto() {
 
-        return null;
+        return artefacto;
     }
 
     @Override
