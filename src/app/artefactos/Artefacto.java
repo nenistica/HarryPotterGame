@@ -21,4 +21,16 @@ public class Artefacto implements IEsMagico {
         this.poderArtefacto = poderArtefacto;
     }
 
+    @Override
+    public boolean esInvisibleAMuggles() {
+       
+        return false;
+    }
+
+    @Override
+    public boolean esInvisible() {
+        
+        return false;
+    }
+
 }

@@ -11,13 +11,9 @@ import app.transportes.Escoba;
 public class Wizard extends Persona implements IHaceMagia {
 
     int energiaMagica;
-
     List<Hechizo> hechizo;
-
     Escoba escoba;
-
     Poder poderInicial;
-
     Artefacto artefacto;
 
     public boolean magoOscuro() {
