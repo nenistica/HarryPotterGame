@@ -37,7 +37,7 @@ public class Elfo extends Criatura implements IHaceMagia {
     @Override
     public void setEnergiaMagica(int energiamagica) {
         this.energiaMagica = energiamagica;
-        // TODO Auto-generated method stub
+        
 
     }
 
