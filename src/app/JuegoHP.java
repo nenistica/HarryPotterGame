@@ -10,7 +10,6 @@ import app.personajes.Personaje;
 import app.personajes.Wizard;
 import app.poderes.Parseltongue;
 import app.poderes.Poder;
-import app.poderes.hechizos.Hechizo;
 import app.poderes.hechizos.ataques.AvadaKedavra;
 import app.poderes.hechizos.ataques.Cruciatus;
 import app.poderes.hechizos.ataques.HechizoAtaque;
