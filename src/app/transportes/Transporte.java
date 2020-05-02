@@ -1,9 +1,35 @@
 package app.transportes;
 
-public abstract class Transporte {
+import app.interfaces.IEsMagico;
 
-    //Deben ir Attr de Transporte para poder extender
+public abstract class Transporte implements IEsMagico {
 
-    //probando 123//
+    // Attr
+    public String nombreDeTransporte;
+
+    // Constructores
+    public Transporte() {
+
+    }
+
+    public Transporte(String nombreDeTransporte) {
+        this.nombreDeTransporte = nombreDeTransporte;
+
+    }
+
+    // Override de IEsMagico
+    @Override
+    public boolean esInvisible() {
+
+        return false;
+    }
+
+    @Override
+    public boolean esInvisibleAMuggles() {
+
+        return false;
+    }
+
+    
 
 }
