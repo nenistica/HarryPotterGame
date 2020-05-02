@@ -47,49 +47,49 @@ public class JuegoHP {
 
     public static void agregarHechizos() {
 
-        AvadaKedavra avvy = new AvadaKedavra();
+        AvadaKedavra avvy = new AvadaKedavra(true, 100, 0, 50);
         JuegoHP.Hechizos.add(avvy);
 
-        Cruciatus cruccy = new Cruciatus();
+        Cruciatus cruccy = new Cruciatus(true, 40, 0, 30);
         JuegoHP.Hechizos.add(cruccy);
 
-        Imperius imppy = new Imperius();
+        Imperius imppy = new Imperius(true, 30, 0, 20);
         JuegoHP.Hechizos.add(imppy);
 
-        PetrificusTotalus petri = new PetrificusTotalus();
+        PetrificusTotalus petri = new PetrificusTotalus(false, 20, 0, 10);
         JuegoHP.Hechizos.add(petri);
 
-        SectumSempra sectty = new SectumSempra();
+        SectumSempra sectty = new SectumSempra(false, 25, 0, 15);
         JuegoHP.Hechizos.add(sectty);
 
-        Episkey eppi = new Episkey();
+        Episkey eppi = new Episkey(false, 0, 12,8);
         JuegoHP.Hechizos.add(eppi);
 
-        Reparifors reppi = new Reparifors();
+        Reparifors reppi = new Reparifors(false, 0, 20, 12);
         JuegoHP.Hechizos.add(reppi);
 
-        VulneraSanetur vully = new VulneraSanetur();
+        VulneraSanetur vully = new VulneraSanetur(false, 0, 30, 20);
         JuegoHP.Hechizos.add(vully);
 
-        CaveInimicum cavvy = new CaveInimicum();
+        CaveInimicum cavvy = new CaveInimicum(false, 30, 20, 40);
         JuegoHP.Hechizos.add(cavvy);
 
-        ExpectoPatronum exppy = new ExpectoPatronum();
+        ExpectoPatronum exppy = new ExpectoPatronum(false,25, 15, 30 );
         JuegoHP.Hechizos.add(exppy);
 
-        Expelliarmus expelly = new Expelliarmus();
+        Expelliarmus expelly = new Expelliarmus(false, 10, 0, 5);
         JuegoHP.Hechizos.add(expelly);
 
-        ProtegoMaxima protty = new ProtegoMaxima();
+        ProtegoMaxima protty = new ProtegoMaxima(false, 15, 20, 15);
         JuegoHP.Hechizos.add(protty);
 
-        Alohomora aloho = new Alohomora();
+        Alohomora aloho = new Alohomora(false, 0, 0, 7);
         JuegoHP.Hechizos.add(aloho);
 
-        Lumos lummy = new Lumos();
+        Lumos lummy = new Lumos(false, 0, 0, 3);
         JuegoHP.Hechizos.add(lummy);
 
-        WingwardiumLeviosa winggy = new WingwardiumLeviosa();
+        WingwardiumLeviosa winggy = new WingwardiumLeviosa(false, 0, 0, 9);
         JuegoHP.Hechizos.add(winggy);
 
     }
