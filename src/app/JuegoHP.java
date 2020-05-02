@@ -54,49 +54,49 @@ public class JuegoHP {
     public static void agregarHechizos() {
 
         AvadaKedavra avvy = new AvadaKedavra("Avada Kedavra","Maldición de Muerte Total",true, 100, 0, 50);
-        JuegoHP.Hechizos.add(avvy);
+        JuegoHP.HechizosAtaque.add(avvy);
 
         Cruciatus cruccy = new Cruciatus("Cruciatus","Maldición de Tortura Física",true, 40, 0, 30);
-        JuegoHP.Hechizos.add(cruccy);
+        JuegoHP.HechizosAtaque.add(cruccy);
 
         Imperius imppy = new Imperius("Imperius","Controlar a la victima",true, 30, 0, 20);
-        JuegoHP.Hechizos.add(imppy);
+        JuegoHP.HechizosAtaque.add(imppy);
 
         PetrificusTotalus petri = new PetrificusTotalus("Petrificus Totales","Parálisis de cuerpo",false, 20, 0, 10);
-        JuegoHP.Hechizos.add(petri);
+        JuegoHP.HechizosAtaque.add(petri);
 
         SectumSempra sectty = new SectumSempra("Sectum Sempra","Profundos cortes a la victima",false, 25, 0, 15);
-        JuegoHP.Hechizos.add(sectty);
+        JuegoHP.HechizosAtaque.add(sectty);
 
         Episkey eppi = new Episkey("Episkey","Cura Heridas",false, 0, 12, 8);
-        JuegoHP.Hechizos.add(eppi);
+        JuegoHP.HechizosCuracion.add(eppi);
 
         Reparifors reppi = new Reparifors("Reparifors","Cura dolencias pequeñas",false, 0, 20, 12);
-        JuegoHP.Hechizos.add(reppi);
+        JuegoHP.HechizosCuracion.add(reppi);
 
         VulneraSanetur vully = new VulneraSanetur("Vulnera Sanetur","Reduce hemorragia y cierra heridas",false, 0, 30, 20);
-        JuegoHP.Hechizos.add(vully);
+        JuegoHP.HechizosCuracion.add(vully);
 
         CaveInimicum cavvy = new CaveInimicum("Cave Inimicum","Proteccion aleja enemigos",false, 30, 20, 40);
-        JuegoHP.Hechizos.add(cavvy);
+        JuegoHP.HechizosDefensa.add(cavvy);
 
         ExpectoPatronum exppy = new ExpectoPatronum("Expecto Patronum","Repele Dementores",false, 25, 15, 30);
-        JuegoHP.Hechizos.add(exppy);
+        JuegoHP.HechizosDefensa.add(exppy);
 
         Expelliarmus expelly = new Expelliarmus("Expelliarmus","Desarma al oponente",false, 10, 0, 5);
-        JuegoHP.Hechizos.add(expelly);
+        JuegoHP.HechizosDefensa.add(expelly);
 
         ProtegoMaxima protty = new ProtegoMaxima("Protego Maxima","Crea una barrera protectora",false, 15, 20, 15);
-        JuegoHP.Hechizos.add(protty);
+        JuegoHP.HechizosDefensa.add(protty);
 
         Alohomora aloho = new Alohomora("Alohomora","Abre puertas con cerraduras",false, 0, 0, 7);
-        JuegoHP.Hechizos.add(aloho);
+        JuegoHP.HechizosOcio.add(aloho);
 
         Lumos lummy = new Lumos("Lumos","Ilumina la punta de la varita",false, 0, 0, 3);
-        JuegoHP.Hechizos.add(lummy);
+        JuegoHP.HechizosOcio.add(lummy);
 
         WingwardiumLeviosa winggy = new WingwardiumLeviosa("Wingwardium Leviosa","Levitar objetos",false, 0, 0, 9);
-        JuegoHP.Hechizos.add(winggy);
+        JuegoHP.HechizosOcio.add(winggy);
 
     }
 
