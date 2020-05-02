@@ -53,7 +53,7 @@ public class Elfo extends Criatura implements IHaceMagia {
     }
 
     @Override
-    public Artefacto getArtefaco() {
+    public Artefacto getArtefacto() {
         // TODO Auto-generated method stub
         return null;
     }
