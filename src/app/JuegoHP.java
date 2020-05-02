@@ -40,7 +40,7 @@ public class JuegoHP {
 
     Wizard harry = new Wizard("Harry Potter", 100, 17, 100, false);
     Poder parsel = new Parseltongue("Lengua Parsel", "Pude hablar con serpientes");
-    Artefacto capaInvisible = new CapaInvisibilidad("Capa Invisibilidad", 0, 0.4)
+    Artefacto capaInvisible = new CapaInvisibilidad("Capa Invisibilidad", 0, 0.4);
     harry.setArtefacto(capaInvisible);
     harry.setPoderInicial(parsel);
     JuegoHP.Personajes.add(harry);
