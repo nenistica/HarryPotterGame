@@ -9,10 +9,10 @@ import app.poderes.hechizos.Hechizo;
 
 public class Elfo extends Criatura implements IHaceMagia {
     //Attr
-    public Artefacto artefacto;
+    private Artefacto artefacto;
     public List<Hechizo> hechizo;
-    public int energiaMagica;
-    public Poder poderInicial;
+    private int energiaMagica;
+    private Poder poderInicial;
 
     public Elfo(Artefacto artefacto, List<Hechizo> hechizo, int energiaMagica,Poder poderInicial) {
         this.artefacto = artefacto;

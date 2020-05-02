@@ -14,7 +14,7 @@ public class Wizard extends Persona implements IHaceMagia {
     List<Hechizo> hechizo;
     Escoba escoba;
     private Poder poderInicial;
-    Artefacto artefacto;
+    private Artefacto artefacto;
     boolean magoOscuro;
 
     public Wizard(String nombre, int salud, int edad, int energiaMagica, List<Hechizo> hechizo, Escoba escoba,
