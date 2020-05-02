@@ -17,7 +17,11 @@ public class JuegoHP {
  public static void agregarPersonajes(){
 
     Wizard harry = new Wizard("Harry Potter", 100, 17, 100, false);
-    Personaje.setArtefacto(//poner el onjeto artefacto cuando lo creemos);
+    Wizard.setArtefacto(//poner el onjeto artefacto cuando lo creemos//);
+    Wizard.setPoderInicial();
+    JuegoHP.Personajes.add(harry);
+
+    Elfo dobby = new Elfo("")
     
  }
  

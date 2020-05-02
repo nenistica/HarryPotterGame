@@ -21,15 +21,34 @@ public class Wizard extends Persona implements IHaceMagia {
         super(nombre, salud, edad);
         this.energiaMagica = energiaMagica;
         this.magoOscuro = magoOscuro;
-        
-    }
-	public void setPoderInicial(Poder poderInicial) {
-		this.poderInicial = poderInicial;
-	}
 
-	public void setArtefacto(Artefacto artefacto) {
-		this.artefacto = artefacto;
-	}
+    }
+
+    public void setPoderInicial(Poder poderInicial) {
+        this.poderInicial = poderInicial;
+    }
+
+    public void setArtefacto(Artefacto artefacto) {
+        this.artefacto = artefacto;
+    }
+
+    public Poder getPoderInicial() {
+        return poderInicial;
+    }
+
+    public Artefacto getArtefacto() {
+        return artefacto;
+    }
+
+    @Override
+    public void atacar(Personaje personaje, String hechizo) {
+
+    }
+
+    @Override
+    public void setPoder(Poder poder) {
+
+    }
 
     @Override
     public int getEnergiaMagica() {
@@ -44,22 +63,6 @@ public class Wizard extends Persona implements IHaceMagia {
     }
 
     @Override
-    public Poder getPoderInicial() {
-        return poderInicial;
-    }
-
-    @Override
-    public void setPoder(Poder poder) {
-        this.poderInicial = poder;
-
-    }
-
-    @Override
-    public Artefacto getArtefacto() {
-        return artefacto;
-    }
-
-    @Override
     public void aprender(Hechizo h) {
         this.hechizo.add(h);
 
@@ -69,20 +72,14 @@ public class Wizard extends Persona implements IHaceMagia {
     public void atacar(Personaje personaje, Hechizo hechizo) {
         // buscar el nivelDanio de hechizo y se lo resta a la salud de personaje
         personaje.salud -= hechizo.nivelDanio;
-        if (this.energiaMagica >= hechizo.energiaMagicaHechizo){
+        if (this.energiaMagica >= hechizo.energiaMagicaHechizo) {
             this.energiaMagica -= hechizo.energiaMagicaHechizo;
         }
 
-        if (this.magoOscuro == false){
-            
+        if (this.magoOscuro == false) {
+
         }
-
-    }
-
-    @Override
-    public void atacar(Personaje personaje, String hechizo) {
 
     }
 
 }
-

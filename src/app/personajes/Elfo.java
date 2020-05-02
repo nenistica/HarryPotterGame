@@ -14,11 +14,9 @@ public class Elfo extends Criatura implements IHaceMagia {
     private int energiaMagica;
     private Poder poderInicial;
 
-    public Elfo(Artefacto artefacto, List<Hechizo> hechizo, int energiaMagica,Poder poderInicial) {
+    public Elfo(Artefacto artefacto, int energiaMagica) {
         this.artefacto = artefacto;
-        this.hechizo = hechizo;
         this.energiaMagica = energiaMagica;
-        this.poderInicial = poderInicial;
     }
 
     public void setArtefacto(Artefacto artefacto) {
