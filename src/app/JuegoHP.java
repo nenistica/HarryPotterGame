@@ -66,7 +66,7 @@ public class JuegoHP {
         SectumSempra sectty = new SectumSempra(false, 25, 0, 15);
         JuegoHP.Hechizos.add(sectty);
 
-        Episkey eppi = new Episkey(false, 0, 12,8);
+        Episkey eppi = new Episkey(false, 0, 12, 8);
         JuegoHP.Hechizos.add(eppi);
 
         Reparifors reppi = new Reparifors(false, 0, 20, 12);
@@ -78,7 +78,7 @@ public class JuegoHP {
         CaveInimicum cavvy = new CaveInimicum(false, 30, 20, 40);
         JuegoHP.Hechizos.add(cavvy);
 
-        ExpectoPatronum exppy = new ExpectoPatronum(false,25, 15, 30 );
+        ExpectoPatronum exppy = new ExpectoPatronum(false, 25, 15, 30);
         JuegoHP.Hechizos.add(exppy);
 
         Expelliarmus expelly = new Expelliarmus(false, 10, 0, 5);
