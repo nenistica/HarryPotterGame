@@ -6,9 +6,13 @@ import java.util.Scanner;
 
 import javax.swing.RepaintManager;
 
+import app.artefactos.Artefacto;
+import app.artefactos.CapaInvisibilidad;
 import app.personajes.Elfo;
 import app.personajes.Personaje;
 import app.personajes.Wizard;
+import app.poderes.Parseltongue;
+import app.poderes.Poder;
 import app.poderes.hechizos.Hechizo;
 import app.poderes.hechizos.ataques.AvadaKedavra;
 import app.poderes.hechizos.ataques.Cruciatus;
@@ -35,13 +39,13 @@ public class JuegoHP {
  public static void agregarPersonajes(){
 
     Wizard harry = new Wizard("Harry Potter", 100, 17, 100, false);
-    harry.setArtefacto(//poner el onjeto artefacto cuando lo creemos//);
-    harry.setPoderInicial();
+    Poder parsel = new Parseltongue("Lengua Parsel", "Pude hablar con serpientes");
+    Artefacto capaInvisible = new CapaInvisibilidad("Capa Invisibilidad", 0, 0.4)
+    harry.setArtefacto(capaInvisible);
+    harry.setPoderInicial(parsel);
     JuegoHP.Personajes.add(harry);
 
     Elfo dobby = new Elfo("Dobby", 100, 60, 100);
-    dobby.setArtefacto();
-    dobby.setPoderInicial();
     JuegoHP.Personajes.add(dobby);
  }
 
@@ -93,5 +97,11 @@ public class JuegoHP {
         JuegoHP.Hechizos.add(winggy);
 
     }
+
+    
+
+
+
+    
  
 }
