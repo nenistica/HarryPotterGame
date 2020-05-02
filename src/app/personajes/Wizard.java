@@ -77,19 +77,7 @@ public class Wizard extends Persona implements IHaceMagia {
 
         if ((this.magoOscuro == false) && (hechizo.esOscuro == true)) {
             this.magoOscuro = true;
-<<<<<<< HEAD
-            personaje.salud -= (2*hechizo.nivelDanio);
-                
-        } else{
-            personaje.salud -= hechizo.nivelDanio;
-            }
-    
-    }
- 
-    }
-=======
             personaje.salud -= (2 * hechizo.nivelDanio);
->>>>>>> c588629eaadf36f7374f62ffffb945befb92519c
 
         } else {
             personaje.salud -= hechizo.nivelDanio;

@@ -11,5 +11,4 @@ public class Poder {
         this.descripcionPoder = descripcionPoder;
     }
 
-
 }

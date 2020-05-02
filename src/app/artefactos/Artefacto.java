@@ -14,7 +14,7 @@ public class Artefacto implements IEsMagico {
     Poder poderArtefacto;
 
     public Artefacto(final String nombreArtefacto, final double amplificadorDeDanio,
-            final double amplificadorDeCuracion) {
+            final double amplificadorDeCuracion, Poder poderArtefacto2) {
         this.nombreArtefacto = nombreArtefacto;
         this.amplificadorDeDanio = amplificadorDeDanio;
         this.amplificadorDeCuracion = amplificadorDeCuracion;
