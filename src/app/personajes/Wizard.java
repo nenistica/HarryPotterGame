@@ -83,7 +83,7 @@ public class Wizard extends Persona implements IHaceMagia {
             personaje.salud -= hechizo.nivelDanio;
             }
     
-        }
+        
  
     }
 
