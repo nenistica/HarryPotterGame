@@ -87,4 +87,4 @@ public class Wizard extends Persona implements IHaceMagia {
  
     }
 
-}
+
