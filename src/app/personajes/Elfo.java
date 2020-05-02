@@ -14,11 +14,10 @@ public class Elfo extends Criatura implements IHaceMagia {
     private int energiaMagica;
     private Poder poderInicial;
 
-    public Elfo(Artefacto artefacto, List<Hechizo> hechizo, int energiaMagica,Poder poderInicial) {
-        this.artefacto = artefacto;
-        this.hechizo = hechizo;
+    public Elfo(String nombre, int salud, int edad, int energiaMagica) {
+        super(nombre, salud,edad);
+        
         this.energiaMagica = energiaMagica;
-        this.poderInicial = poderInicial;
     }
 
     public void setArtefacto(Artefacto artefacto) {
@@ -70,6 +69,11 @@ public class Elfo extends Criatura implements IHaceMagia {
     @Override
     public void atacar(Personaje personaje, Hechizo hechizo) {
         // busca el nivelDanio de hechizo y se lo resta a la salud de personaje
+        personaje.salud -= hechizo.nivelDanio;
+        if (this.energiaMagica >= hechizo.energiaMagicaHechizo){
+        this.energiaMagica -= hechizo.energiaMagicaHechizo;
+        }
+        
 
     }
 

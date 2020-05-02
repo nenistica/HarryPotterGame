@@ -17,16 +17,37 @@ public class Wizard extends Persona implements IHaceMagia {
     private Artefacto artefacto;
     boolean magoOscuro;
 
-    public Wizard(String nombre, int salud, int edad, int energiaMagica, List<Hechizo> hechizo, Escoba escoba,
-    Poder poderInicial, Artefacto artefacto, boolean magoOscuro) {
+    public Wizard(String nombre, int salud, int edad, int energiaMagica, boolean magoOscuro) {
         super(nombre, salud, edad);
         this.energiaMagica = energiaMagica;
-        this.hechizo = hechizo;
-        this.escoba = escoba;
-        this.poderInicial = poderInicial;
-        this.artefacto = artefacto;
         this.magoOscuro = magoOscuro;
-        
+
+    }
+
+    public void setPoderInicial(Poder poderInicial) {
+        this.poderInicial = poderInicial;
+    }
+
+    public void setArtefacto(Artefacto artefacto) {
+        this.artefacto = artefacto;
+    }
+
+    public Poder getPoderInicial() {
+        return poderInicial;
+    }
+
+    public Artefacto getArtefacto() {
+        return artefacto;
+    }
+
+    @Override
+    public void atacar(Personaje personaje, String hechizo) {
+
+    }
+
+    @Override
+    public void setPoder(Poder poder) {
+
     }
 
     @Override
@@ -42,22 +63,6 @@ public class Wizard extends Persona implements IHaceMagia {
     }
 
     @Override
-    public Poder getPoderInicial() {
-        return poderInicial;
-    }
-
-    @Override
-    public void setPoder(Poder poder) {
-        this.poderInicial = poder;
-
-    }
-
-    @Override
-    public Artefacto getArtefacto() {
-        return artefacto;
-    }
-
-    @Override
     public void aprender(Hechizo h) {
         this.hechizo.add(h);
 
@@ -65,13 +70,21 @@ public class Wizard extends Persona implements IHaceMagia {
 
     @Override
     public void atacar(Personaje personaje, Hechizo hechizo) {
-        // buscar el nivelDanio de hechizo y se lo resta a la salud de personaje
-
-    }
-
-    @Override
-    public void atacar(Personaje personaje, String hechizo) {
-
+         // buscar el nivelDanio de hechizo y se lo resta a la salud de personaje
+         if (this.energiaMagica >= hechizo.energiaMagicaHechizo){
+            this.energiaMagica -= hechizo.energiaMagicaHechizo;
+         }
+    
+        if ((this.magoOscuro == false) && (hechizo.esOscuro == true)){
+            this.magoOscuro = true;
+            personaje.salud -= (2*hechizo.nivelDanio);
+                
+        } else{
+            personaje.salud -= hechizo.nivelDanio;
+            }
+    
+        }
+ 
     }
 
 }
