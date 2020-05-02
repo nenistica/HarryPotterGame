@@ -23,6 +23,13 @@ public class Wizard extends Persona implements IHaceMagia {
         this.magoOscuro = magoOscuro;
         
     }
+	public void setPoderInicial(Poder poderInicial) {
+		this.poderInicial = poderInicial;
+	}
+
+	public void setArtefacto(Artefacto artefacto) {
+		this.artefacto = artefacto;
+	}
 
     @Override
     public int getEnergiaMagica() {
@@ -78,3 +85,4 @@ public class Wizard extends Persona implements IHaceMagia {
     }
 
 }
+
