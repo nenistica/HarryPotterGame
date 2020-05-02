@@ -1,11 +1,7 @@
 package app;
-
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
-
-import javax.swing.RepaintManager;
-
 import app.artefactos.Artefacto;
 import app.artefactos.CapaInvisibilidad;
 import app.personajes.Elfo;
