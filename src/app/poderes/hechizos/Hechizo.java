@@ -4,15 +4,13 @@ import app.poderes.Poder;
 
 public class Hechizo extends Poder{ 
 
-    public boolean esOscuro(){
-        return true;
-    }
+    public boolean esOscuro;
+     
+    public int nivelDanio;
 
-    int nivelDanio;
+    public int nivelCuracion;
 
-    int nivelCuracion;
-
-    int energiaMagicaHechizo;
+    public int energiaMagicaHechizo;
 
 
 }
