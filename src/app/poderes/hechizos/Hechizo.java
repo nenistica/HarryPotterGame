@@ -17,8 +17,4 @@ public class Hechizo extends Poder {
         this.nivelCuracion = nivelCuracion;
         this.energiaMagicaHechizo = energiaMagicaHechizo;
     }
-<<<<<<< HEAD
-=======
-
->>>>>>> 4ca57012b3ef7eee1b2c0879b30dd846d46bb56c
 }

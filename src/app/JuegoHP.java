@@ -53,7 +53,6 @@ public class JuegoHP {
 
     public static void agregarHechizos() {
 
-<<<<<<< HEAD
         AvadaKedavra avvy = new AvadaKedavra("Avada Kedavra","Maldición de Muerte Total",true, 100, 0, 50);
         JuegoHP.Hechizos.add(avvy);
 
@@ -98,52 +97,6 @@ public class JuegoHP {
 
         WingwardiumLeviosa winggy = new WingwardiumLeviosa("Wingwardium Leviosa","Levitar objetos",false, 0, 0, 9);
         JuegoHP.Hechizos.add(winggy);
-=======
-        AvadaKedavra avvy = new AvadaKedavra(true, 100, 0, 50);
-        JuegoHP.HechizosAtaque.add(avvy);
-
-        Cruciatus cruccy = new Cruciatus(true, 40, 0, 30);
-        JuegoHP.HechizosAtaque.add(cruccy);
-
-        Imperius imppy = new Imperius(true, 30, 0, 20);
-        JuegoHP.HechizosAtaque.add(imppy);
-
-        PetrificusTotalus petri = new PetrificusTotalus(false, 20, 0, 10);
-        JuegoHP.HechizosAtaque.add(petri);
-
-        SectumSempra sectty = new SectumSempra(false, 25, 0, 15);
-        JuegoHP.HechizosAtaque.add(sectty);
-
-        Episkey eppi = new Episkey(false, 0, 12, 8);
-        JuegoHP.HechizosCuracion.add(eppi);
-
-        Reparifors reppi = new Reparifors(false, 0, 20, 12);
-        JuegoHP.HechizosCuracion.add(reppi);
-
-        VulneraSanetur vully = new VulneraSanetur(false, 0, 30, 20);
-        JuegoHP.HechizosCuracion.add(vully);
-
-        CaveInimicum cavvy = new CaveInimicum(false, 30, 20, 40);
-        JuegoHP.HechizosDefensa.add(cavvy);
-
-        ExpectoPatronum exppy = new ExpectoPatronum(false, 25, 15, 30);
-        JuegoHP.HechizosDefensa.add(exppy);
-
-        Expelliarmus expelly = new Expelliarmus(false, 10, 0, 5);
-        JuegoHP.HechizosDefensa.add(expelly);
-
-        ProtegoMaxima protty = new ProtegoMaxima(false, 15, 20, 15);
-        JuegoHP.HechizosDefensa.add(protty);
-
-        Alohomora aloho = new Alohomora(false, 0, 0, 7);
-        JuegoHP.HechizosOcio.add(aloho);
-
-        Lumos lummy = new Lumos(false, 0, 0, 3);
-        JuegoHP.HechizosOcio.add(lummy);
-
-        WingwardiumLeviosa winggy = new WingwardiumLeviosa(false, 0, 0, 9);
-        JuegoHP.HechizosOcio.add(winggy);
->>>>>>> 4ca57012b3ef7eee1b2c0879b30dd846d46bb56c
 
     }
 
