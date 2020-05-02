@@ -11,10 +11,14 @@ public class Artefacto implements IEsMagico {
 
     double amplificadorDeCuracion;
 
-    Poder poderArtefacto;
+    static Poder poderArtefacto;
 
     public Artefacto(final String nombreArtefacto, final double amplificadorDeDanio,
+<<<<<<< HEAD
             final double amplificadorDeCuracion, Poder poderArtefacto2) {
+=======
+            final double amplificadorDeCuracion, Poder poderArtefacto) {
+>>>>>>> 4ca57012b3ef7eee1b2c0879b30dd846d46bb56c
         this.nombreArtefacto = nombreArtefacto;
         this.amplificadorDeDanio = amplificadorDeDanio;
         this.amplificadorDeCuracion = amplificadorDeCuracion;

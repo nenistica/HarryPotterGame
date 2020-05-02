@@ -2,7 +2,7 @@ package app.poderes.hechizos;
 
 import app.poderes.Poder;
 
-public class Hechizo extends Poder{ 
+public class Hechizo extends Poder {
 
     public boolean esOscuro;
     public int nivelDanio;
@@ -17,4 +17,8 @@ public class Hechizo extends Poder{
         this.nivelCuracion = nivelCuracion;
         this.energiaMagicaHechizo = energiaMagicaHechizo;
     }
+<<<<<<< HEAD
+=======
+
+>>>>>>> 4ca57012b3ef7eee1b2c0879b30dd846d46bb56c
 }

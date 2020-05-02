@@ -1,5 +1,4 @@
 package app;
-
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
@@ -10,20 +9,23 @@ import app.personajes.Personaje;
 import app.personajes.Wizard;
 import app.poderes.Parseltongue;
 import app.poderes.Poder;
-import app.poderes.hechizos.Hechizo;
 import app.poderes.hechizos.ataques.AvadaKedavra;
 import app.poderes.hechizos.ataques.Cruciatus;
+import app.poderes.hechizos.ataques.HechizoAtaque;
 import app.poderes.hechizos.ataques.Imperius;
 import app.poderes.hechizos.ataques.PetrificusTotalus;
 import app.poderes.hechizos.ataques.SectumSempra;
 import app.poderes.hechizos.curaciones.Episkey;
+import app.poderes.hechizos.curaciones.HechizoCuracion;
 import app.poderes.hechizos.curaciones.Reparifors;
 import app.poderes.hechizos.curaciones.VulneraSanetur;
 import app.poderes.hechizos.defensas.CaveInimicum;
 import app.poderes.hechizos.defensas.ExpectoPatronum;
 import app.poderes.hechizos.defensas.Expelliarmus;
+import app.poderes.hechizos.defensas.HechizoDefensa;
 import app.poderes.hechizos.defensas.ProtegoMaxima;
 import app.poderes.hechizos.ocios.Alohomora;
+import app.poderes.hechizos.ocios.HechizoOcio;
 import app.poderes.hechizos.ocios.Lumos;
 import app.poderes.hechizos.ocios.WingwardiumLeviosa;
 
@@ -31,7 +33,10 @@ public class JuegoHP {
     public static Scanner Teclado = new Scanner(System.in);
 
     public static List<Personaje> Personajes = new ArrayList<Personaje>();
-    public static List<Hechizo> Hechizos = new ArrayList<Hechizo>();
+    public static List<HechizoAtaque> HechizosAtaque = new ArrayList<HechizoAtaque>();
+    public static List<HechizoDefensa> HechizosDefensa = new ArrayList<HechizoDefensa>();
+    public static List<HechizoCuracion> HechizosCuracion = new ArrayList<HechizoCuracion>();
+    public static List<HechizoOcio> HechizosOcio = new ArrayList<HechizoOcio>();
 
  public static void agregarPersonajes(){
 
@@ -48,6 +53,7 @@ public class JuegoHP {
 
     public static void agregarHechizos() {
 
+<<<<<<< HEAD
         AvadaKedavra avvy = new AvadaKedavra("Avada Kedavra","Maldición de Muerte Total",true, 100, 0, 50);
         JuegoHP.Hechizos.add(avvy);
 
@@ -92,6 +98,52 @@ public class JuegoHP {
 
         WingwardiumLeviosa winggy = new WingwardiumLeviosa("Wingwardium Leviosa","Levitar objetos",false, 0, 0, 9);
         JuegoHP.Hechizos.add(winggy);
+=======
+        AvadaKedavra avvy = new AvadaKedavra(true, 100, 0, 50);
+        JuegoHP.HechizosAtaque.add(avvy);
+
+        Cruciatus cruccy = new Cruciatus(true, 40, 0, 30);
+        JuegoHP.HechizosAtaque.add(cruccy);
+
+        Imperius imppy = new Imperius(true, 30, 0, 20);
+        JuegoHP.HechizosAtaque.add(imppy);
+
+        PetrificusTotalus petri = new PetrificusTotalus(false, 20, 0, 10);
+        JuegoHP.HechizosAtaque.add(petri);
+
+        SectumSempra sectty = new SectumSempra(false, 25, 0, 15);
+        JuegoHP.HechizosAtaque.add(sectty);
+
+        Episkey eppi = new Episkey(false, 0, 12, 8);
+        JuegoHP.HechizosCuracion.add(eppi);
+
+        Reparifors reppi = new Reparifors(false, 0, 20, 12);
+        JuegoHP.HechizosCuracion.add(reppi);
+
+        VulneraSanetur vully = new VulneraSanetur(false, 0, 30, 20);
+        JuegoHP.HechizosCuracion.add(vully);
+
+        CaveInimicum cavvy = new CaveInimicum(false, 30, 20, 40);
+        JuegoHP.HechizosDefensa.add(cavvy);
+
+        ExpectoPatronum exppy = new ExpectoPatronum(false, 25, 15, 30);
+        JuegoHP.HechizosDefensa.add(exppy);
+
+        Expelliarmus expelly = new Expelliarmus(false, 10, 0, 5);
+        JuegoHP.HechizosDefensa.add(expelly);
+
+        ProtegoMaxima protty = new ProtegoMaxima(false, 15, 20, 15);
+        JuegoHP.HechizosDefensa.add(protty);
+
+        Alohomora aloho = new Alohomora(false, 0, 0, 7);
+        JuegoHP.HechizosOcio.add(aloho);
+
+        Lumos lummy = new Lumos(false, 0, 0, 3);
+        JuegoHP.HechizosOcio.add(lummy);
+
+        WingwardiumLeviosa winggy = new WingwardiumLeviosa(false, 0, 0, 9);
+        JuegoHP.HechizosOcio.add(winggy);
+>>>>>>> 4ca57012b3ef7eee1b2c0879b30dd846d46bb56c
 
     }
 

@@ -10,7 +10,7 @@ public class App {
 
         JuegoHP mijuegoHp = new JuegoHP();
 
-        
+               
 
     }
 }
