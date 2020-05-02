@@ -14,8 +14,9 @@ public class Elfo extends Criatura implements IHaceMagia {
     private int energiaMagica;
     private Poder poderInicial;
 
-    public Elfo(Artefacto artefacto, int energiaMagica) {
-        this.artefacto = artefacto;
+    public Elfo(String nombre, int salud, int edad, int energiaMagica) {
+        super(nombre, salud,edad);
+        
         this.energiaMagica = energiaMagica;
     }
 
