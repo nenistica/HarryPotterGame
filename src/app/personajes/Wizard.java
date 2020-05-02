@@ -70,16 +70,21 @@ public class Wizard extends Persona implements IHaceMagia {
 
     @Override
     public void atacar(Personaje personaje, Hechizo hechizo) {
-        // buscar el nivelDanio de hechizo y se lo resta a la salud de personaje
-        personaje.salud -= hechizo.nivelDanio;
-        if (this.energiaMagica >= hechizo.energiaMagicaHechizo) {
+         // buscar el nivelDanio de hechizo y se lo resta a la salud de personaje
+         if (this.energiaMagica >= hechizo.energiaMagicaHechizo){
             this.energiaMagica -= hechizo.energiaMagicaHechizo;
+         }
+    
+        if ((this.magoOscuro == false) && (hechizo.esOscuro == true)){
+            this.magoOscuro = true;
+            personaje.salud -= (2*hechizo.nivelDanio);
+                
+        } else{
+            personaje.salud -= hechizo.nivelDanio;
+            }
+    
         }
-
-        if (this.magoOscuro == false) {
-
-        }
-
+ 
     }
 
 }
