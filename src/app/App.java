@@ -5,6 +5,12 @@ import java.util.Scanner;
 public class App {
     public static Scanner Teclado = new Scanner (System.in);
     public static void main(String[] args) throws Exception {
-        System.out.println("Hello Java");
+        System.out.println("Harry Potter Game");
+        System.out.println("Creado por Alex, Maggie y Dani");
+
+        JuegoHP mijuegoHp = new JuegoHP();
+
+        
+
     }
 }
