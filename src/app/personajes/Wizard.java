@@ -73,15 +73,16 @@ public class Wizard extends Persona implements IHaceMagia {
         // buscar el nivelDanio de hechizo y se lo resta a la salud de personaje
         if (this.energiaMagica >= hechizo.energiaMagicaHechizo) {
             this.energiaMagica -= hechizo.energiaMagicaHechizo;
+            if ((this.magoOscuro == false) && (hechizo.esOscuro == true)) {
+                this.magoOscuro = true;
+                personaje.salud -= (2 * hechizo.nivelDanio)*(1+this.artefacto.amplificadorDeDanio);
+                this.setSalud(hechizo.nivelCuracion);
+    
+            } else {
+                personaje.salud -= hechizo.nivelDanio*(1+this.artefacto.amplificadorDeDanio);
+            }
+        }else{
+            System.out.println("No tienes suficiente energia mágica para realizar el hechizo.");
         }
-
-        if ((this.magoOscuro == false) && (hechizo.esOscuro == true)) {
-            this.magoOscuro = true;
-            personaje.salud -= (2 * hechizo.nivelDanio);
-
-        } else {
-            personaje.salud -= hechizo.nivelDanio;
-        }
-
     }
 }

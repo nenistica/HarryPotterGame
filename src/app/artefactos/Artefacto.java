@@ -5,11 +5,11 @@ import app.poderes.Poder;
 
 public class Artefacto implements IEsMagico {
 
-    String nombreArtefacto;
+    public String nombreArtefacto;
 
-    double amplificadorDeDanio;
+    public double amplificadorDeDanio;
 
-    double amplificadorDeCuracion;
+    public double amplificadorDeCuracion;
 
     static Poder poderArtefacto;
 
