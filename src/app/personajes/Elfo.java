@@ -79,7 +79,7 @@ public class Elfo extends Criatura implements IHaceMagia {
 
     @Override
     public void atacar(Personaje personaje, String hechizo) {
-        // TODO Auto-generated method stub
+        
 
     }
 

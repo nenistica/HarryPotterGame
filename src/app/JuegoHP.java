@@ -32,7 +32,7 @@ import app.poderes.hechizos.ocios.WingwardiumLeviosa;
 public class JuegoHP {
     public static Scanner Teclado = new Scanner(System.in);
 
-    public static List<Personaje> Personajes = new ArrayList<Personaje>();
+    public static List<Personaje> PersonajesLista = new ArrayList<Personaje>();
     public static List<HechizoAtaque> HechizosAtaque = new ArrayList<HechizoAtaque>();
     public static List<HechizoDefensa> HechizosDefensa = new ArrayList<HechizoDefensa>();
     public static List<HechizoCuracion> HechizosCuracion = new ArrayList<HechizoCuracion>();
@@ -45,12 +45,12 @@ public class JuegoHP {
     Artefacto capaInvisible = new CapaInvisibilidad("Capa Invisibilidad", 0, 0.4);
     harry.setArtefacto(capaInvisible);
     harry.setPoderInicial(parsel);
-    JuegoHP.Personajes.add(harry);
+    JuegoHP.PersonajesLista.add(harry);
 
     Elfo dobby = new Elfo("Dobby", 100, 60, 100);
-    JuegoHP.Personajes.add(dobby);
- }
-
+    JuegoHP.PersonajesLista.add(dobby);
+ }      
+        //Hechizos
     public static void agregarHechizos() {
 
         AvadaKedavra avvy = new AvadaKedavra("Avada Kedavra","Maldición de Muerte Total",true, 100, 0, 50);
@@ -98,10 +98,29 @@ public class JuegoHP {
         WingwardiumLeviosa winggy = new WingwardiumLeviosa("Wingwardium Leviosa","Levitar objetos",false, 0, 0, 9);
         JuegoHP.HechizosOcio.add(winggy);
 
+    }   
+
+    public static void inicioJuegoHP(){
+        JuegoHP.agregarPersonajes();
+        JuegoHP.agregarArtefactos();
+        JuegoHP.agregarHechizos();
     }
 
-    
+    public Personaje seleccionaPersonaje(){
+        int Opcion;
+        System.out.println("Escribe el número del personaje que quieras seleccionar: ");
+        Opcion = Teclado.nextInt();
 
+        switch (Opcion) {
+            case 1:
+            return PersonajesLista[0];
+                
+                break;
+        
+            default:
+                break;
+        }
+    }
 
 
     

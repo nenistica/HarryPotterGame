@@ -2,6 +2,8 @@ package app;
 
 import java.util.Scanner;
 
+import app.personajes.Personaje;
+
 public class App {
     public static Scanner Teclado = new Scanner (System.in);
     public static void main(String[] args) throws Exception {
@@ -10,7 +12,10 @@ public class App {
 
         JuegoHP mijuegoHp = new JuegoHP();
 
-               
+        JuegoHP.inicioJuegoHP();
+        
+        Personaje player1 = seleccionaPersonaje();
+        Personaje player2 = seleccionaPersonaje();
 
     }
-}
+}   
