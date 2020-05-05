@@ -12,10 +12,17 @@ public class App {
 
         JuegoHP mijuegoHp = new JuegoHP();
 
-        JuegoHP.inicioJuegoHP();
+        //JuegoHP.inicioJuegoHP();
         
-        Personaje player1 = seleccionaPersonaje();
-        Personaje player2 = seleccionaPersonaje();
+        Personaje player1 = mijuegoHp.seleccionaPersonaje();
+        //Personaje player2 = mijuegoHp.seleccionaPersonaje();
+
+        System.out.println(player1.getNombre());
+        
+        //Personaje player1 = seleccionaPersonaje();
+        //Personaje player2 = seleccionaPersonaje();
+
+
 
     }
 }   
