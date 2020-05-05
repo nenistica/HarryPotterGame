@@ -9,17 +9,14 @@ public class App {
     public static void main(String[] args) throws Exception {
         System.out.println("Harry Potter Game");
         System.out.println("Creado por Alex, Maggie y Dani");
-
+        System.out.println(" ");
         JuegoHP mijuegoHp = new JuegoHP();
 
-        //JuegoHP.inicioJuegoHP();
-        JuegoHP.agregarPersonajes();
+        JuegoHP.inicioJuegoHP();
 
 
         // Hago for loop para ver los personajes de la lista
-        for(Personaje persona : JuegoHP.PersonajesLista) {
-            System.out.println(persona.getNombre());
-        }
+        
 
         Personaje player1 = mijuegoHp.seleccionaPersonaje();
         //Personaje player2 = mijuegoHp.seleccionaPersonaje();

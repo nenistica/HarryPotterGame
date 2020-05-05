@@ -127,6 +127,8 @@ public class JuegoHP {
 
     public static void inicioJuegoHP() {
         JuegoHP.agregarPersonajes();
+        JuegoHP.mostrarListaPersonajes();
+        System.out.println(" ");
         // JuegoHP.agregarArtefactos();
         JuegoHP.agregarHechizos();
     }
@@ -135,7 +137,7 @@ public class JuegoHP {
         for (Personaje personaje : PersonajesLista) {
             if (nombre.equalsIgnoreCase(personaje.getNombre())) {
                 return personaje;
-           } 
+            }
         }
         // return System.out.println("Tu personaje no pertenece al mundo mágico");;
         return null;
@@ -148,6 +150,13 @@ public class JuegoHP {
         Opcion = Teclado.nextLine();
         return getPersonajeByName(Opcion);
 
+    }
+
+    static void mostrarListaPersonajes() {
+        System.out.println("LISTA DE PERSONAJES");
+        for(Personaje persona : JuegoHP.PersonajesLista) {
+            System.out.println(persona.getNombre());
+        }
     }
 
 }
