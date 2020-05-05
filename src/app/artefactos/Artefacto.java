@@ -11,13 +11,14 @@ public class Artefacto implements IEsMagico {
 
     public double amplificadorDeCuracion;
 
-    static Poder poderArtefacto;
+    public Poder poderArtefacto;
 
     public Artefacto(final String nombreArtefacto, final double amplificadorDeDanio,
             final double amplificadorDeCuracion, Poder poderArtefacto) {
         this.nombreArtefacto = nombreArtefacto;
         this.amplificadorDeDanio = amplificadorDeDanio;
         this.amplificadorDeCuracion = amplificadorDeCuracion;
+        this.poderArtefacto = poderArtefacto;
     }
 
     @Override

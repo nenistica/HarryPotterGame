@@ -5,11 +5,16 @@ import java.util.List;
 import java.util.Scanner;
 import app.artefactos.Artefacto;
 import app.artefactos.CapaInvisibilidad;
+import app.artefactos.Giratiempo;
+import app.artefactos.Varita;
 import app.personajes.Elfo;
 import app.personajes.Personaje;
 import app.personajes.Wizard;
+import app.poderes.Invisibilidad;
+import app.poderes.Metamorfosis;
 import app.poderes.Parseltongue;
 import app.poderes.Poder;
+import app.poderes.hechizos.Hechizo;
 import app.poderes.hechizos.ataques.AvadaKedavra;
 import app.poderes.hechizos.ataques.Cruciatus;
 import app.poderes.hechizos.ataques.HechizoAtaque;
@@ -41,15 +46,32 @@ public class JuegoHP {
 
     public static void agregarPersonajes() {
 
-        Wizard harry = new Wizard("Harry Potter", 100, 17, 100, false);
         Poder parsel = new Parseltongue("Lengua Parsel", "Pude hablar con serpientes");
-        Artefacto capaInvisible = new CapaInvisibilidad("Capa Invisibilidad", 0, 0.4);
+        Poder invisibilidad = new Invisibilidad("Invisibilidad","Se hace invisible a todos");
+        Poder metamorfosis = new Metamorfosis("Metamorfosis","Se puede cambiar de forma");
+        Poder hechizo = new Hechizo("Hechizo","Capacidad de ejecutar hechizos", false, 0, 0, 0);
+
+        Artefacto capaInvisible = new CapaInvisibilidad("Capa Invisibilidad", 0, 0.4,invisibilidad);
+        Artefacto giratiempo = new Giratiempo("Giratiempo", 0, 0.3,parsel);
+        Artefacto varitafresno = new Varita("Varita de fresno",0.2, 0.3,hechizo);
+
+        Wizard harry = new Wizard("Harry Potter", 100, 17, 150, false);
         harry.setArtefacto(capaInvisible);
         harry.setPoderInicial(parsel);
         JuegoHP.PersonajesLista.add(harry);
 
-        Elfo dobby = new Elfo("Dobby", 100, 60, 100);
+        Elfo dobby = new Elfo("Dobby", 100, 60, 150);
+        dobby.setPoder(metamorfosis);
         JuegoHP.PersonajesLista.add(dobby);
+
+        Wizard hermy = new Wizard("Hermione Granger", 100, 17, 150, false);
+        hermy.setPoderInicial(parsel);
+        hermy.setArtefacto(giratiempo);
+        JuegoHP.PersonajesLista.add(hermy);
+
+        Wizard ron = new Wizard("Ron Weasly",100,17,150,false);
+        ron.setArtefacto(varitafresno);
+        JuegoHP.PersonajesLista.add(ron);
     }
 
     // Hechizos

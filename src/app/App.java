@@ -15,6 +15,12 @@ public class App {
         //JuegoHP.inicioJuegoHP();
         JuegoHP.agregarPersonajes();
 
+
+        // Hago for loop para ver los personajes de la lista
+        for(Personaje persona : JuegoHP.PersonajesLista) {
+            System.out.println(persona.getNombre());
+        }
+
         Personaje player1 = mijuegoHp.seleccionaPersonaje();
         //Personaje player2 = mijuegoHp.seleccionaPersonaje();
 
