@@ -2,8 +2,8 @@ package app.poderes;
 
 public class Poder {
     //Attrs
-    String nombrePoder;
-    String descripcionPoder;
+    public String nombrePoder;
+    public String descripcionPoder;
     
     //Constructores
     public Poder(String nombrePoder, String descripcionPoder) {

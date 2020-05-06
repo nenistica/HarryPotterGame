@@ -2,11 +2,11 @@ package app.personajes;
 
 public class Personaje {
     // Attr
-    String nombre;
-    int salud;
-    int edad;
+    private String nombre;
+    private int salud;
+    private int edad;
 
-    boolean estaVivo() {
+    public boolean estaVivo() {
         if (salud > 0) {
             return true;
         } else {

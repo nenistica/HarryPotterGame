@@ -68,7 +68,7 @@ public class Elfo extends Criatura implements IHaceMagia {
     @Override
     public void atacar(Personaje personaje, Hechizo hechizo) {
         // busca el nivelDanio de hechizo y se lo resta a la salud de personaje
-        personaje.salud -= hechizo.nivelDanio;
+        personaje.setSalud(hechizo.nivelDanio);
         if (this.energiaMagica >= hechizo.energiaMagicaHechizo){
         this.energiaMagica -= hechizo.energiaMagicaHechizo;
         }

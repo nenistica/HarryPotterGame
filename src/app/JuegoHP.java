@@ -1,40 +1,14 @@
 package app;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Scanner;
-import app.artefactos.Artefacto;
-import app.artefactos.CapaInvisibilidad;
-import app.artefactos.Giratiempo;
-import app.artefactos.Horrocrux;
-import app.artefactos.Varita;
-import app.personajes.Elfo;
-import app.personajes.Personaje;
-import app.personajes.Wizard;
-import app.poderes.Invisibilidad;
-import app.poderes.Metamorfosis;
-import app.poderes.Parseltongue;
-import app.poderes.Poder;
-import app.poderes.hechizos.Hechizo;
-import app.poderes.hechizos.ataques.AvadaKedavra;
-import app.poderes.hechizos.ataques.Cruciatus;
-import app.poderes.hechizos.ataques.HechizoAtaque;
-import app.poderes.hechizos.ataques.Imperius;
-import app.poderes.hechizos.ataques.PetrificusTotalus;
-import app.poderes.hechizos.ataques.SectumSempra;
-import app.poderes.hechizos.curaciones.Episkey;
-import app.poderes.hechizos.curaciones.HechizoCuracion;
-import app.poderes.hechizos.curaciones.Reparifors;
-import app.poderes.hechizos.curaciones.VulneraSanetur;
-import app.poderes.hechizos.defensas.CaveInimicum;
-import app.poderes.hechizos.defensas.ExpectoPatronum;
-import app.poderes.hechizos.defensas.Expelliarmus;
-import app.poderes.hechizos.defensas.HechizoDefensa;
-import app.poderes.hechizos.defensas.ProtegoMaxima;
-import app.poderes.hechizos.ocios.Alohomora;
-import app.poderes.hechizos.ocios.HechizoOcio;
-import app.poderes.hechizos.ocios.Lumos;
-import app.poderes.hechizos.ocios.WingwardiumLeviosa;
+import java.util.*;
+import app.artefactos.*;
+import app.personajes.*;
+import app.poderes.*;
+import app.poderes.hechizos.*;
+import app.poderes.hechizos.ataques.*;
+import app.poderes.hechizos.curaciones.*;
+import app.poderes.hechizos.defensas.*;
+import app.poderes.hechizos.ocios.*;
 
 public class JuegoHP {
     public static Scanner Teclado = new Scanner(System.in);
@@ -48,17 +22,16 @@ public class JuegoHP {
     public static void agregarPersonajes() {
 
         Poder parsel = new Parseltongue("Lengua Parsel", "Pude hablar con serpientes");
-        Poder invisibilidad = new Invisibilidad("Invisibilidad","Se hace invisible a todos");
-        Poder metamorfosis = new Metamorfosis("Metamorfosis","Se puede cambiar de forma");
-        Poder hechizo = new Hechizo("Hechizo","Capacidad de ejecutar hechizos", false, 0, 0, 0);
+        Poder invisibilidad = new Invisibilidad("Invisibilidad", "Se hace invisible a todos");
+        Poder metamorfosis = new Metamorfosis("Metamorfosis", "Se puede cambiar de forma");
+        Poder hechizo = new Hechizo("Hechizo", "Capacidad de ejecutar hechizos", false, 0, 0, 0);
 
-        Artefacto capaInvisible = new CapaInvisibilidad("Capa Invisibilidad", 0, 0.4,invisibilidad);
-        Artefacto giratiempo = new Giratiempo("Giratiempo", 0, 0.3,parsel);
-        Artefacto varFresno = new Varita("Varita de fresno",0.2, 0.3,hechizo);
+        Artefacto capaInvisible = new CapaInvisibilidad("Capa Invisibilidad", 0, 0.4, invisibilidad);
+        Artefacto giratiempo = new Giratiempo("Giratiempo", 0, 0.3, parsel);
+        Artefacto varFresno = new Varita("Varita de fresno", 0.2, 0.3, hechizo);
         Artefacto varEspino = new Varita("Varita de Espino", 0.3, 0.1, hechizo);
         Artefacto varSauco = new Varita("Varita de Sauco", 1, 0.6, hechizo);
         Artefacto horrocruxy = new Horrocrux("Horrocrux", 0.9, 0, hechizo);
-        
 
         Wizard harry = new Wizard("Harry Potter", 100, 17, 150, false);
         harry.setArtefacto(capaInvisible);
@@ -74,7 +47,7 @@ public class JuegoHP {
         hermy.setArtefacto(giratiempo);
         JuegoHP.PersonajesLista.add(hermy);
 
-        Wizard ron = new Wizard("Ron Weasly",100,17,150,false);
+        Wizard ron = new Wizard("Ron Weasly", 100, 17, 150, false);
         ron.setArtefacto(varFresno);
         JuegoHP.PersonajesLista.add(ron);
 
@@ -102,7 +75,7 @@ public class JuegoHP {
         dumby.setPoderInicial(hechizo);
         dumby.setArtefacto(varSauco);
         JuegoHP.PersonajesLista.add(dumby);
-        
+
     }
 
     // Hechizos
@@ -185,9 +158,22 @@ public class JuegoHP {
 
     static void mostrarListaPersonajes() {
         System.out.println("LISTA DE PERSONAJES");
-        for(Personaje persona : JuegoHP.PersonajesLista) {
+        for (Personaje persona : JuegoHP.PersonajesLista) {
             System.out.println(persona.getNombre());
         }
+    }
+
+    public Hechizo elegirHechizo() { //Preguntar el forloop para imprimir la lista de hechizos.
+        String nombreH;
+        System.out.println("Escribe el nombre del hechizo: ");
+        nombreH = Teclado.nextLine();
+        for (HechizoAtaque hechizoAtaque : JuegoHP.HechizosAtaque) {
+            if (nombreH.equalsIgnoreCase(hechizoAtaque.nombrePoder)) {
+                return hechizoAtaque;
+            }
+        }
+        return null;
+
     }
 
 }
