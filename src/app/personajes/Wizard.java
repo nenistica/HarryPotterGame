@@ -66,9 +66,11 @@ public class Wizard extends Persona implements IHaceMagia {
     @Override
     public void atacar(Personaje personaje, Hechizo hechizo) {
         // buscar el nivelDanio de hechizo y se lo resta a la salud de personaje
-        if (this.energiaMagica >= hechizo.energiaMagicaHechizo) {
+        if (this.getEnergiaMagica() >= hechizo.energiaMagicaHechizo) { //DA ERROR NULL
             
-            this.energiaMagica -= hechizo.energiaMagicaHechizo;
+            int energiaMagicaPlayer = this.getEnergiaMagica();
+            energiaMagicaPlayer -= hechizo.energiaMagicaHechizo;
+            this.setEnergiaMagica(energiaMagicaPlayer);
 
             if ((this.magoOscuro == false) && (hechizo.esOscuro == true)) {
 

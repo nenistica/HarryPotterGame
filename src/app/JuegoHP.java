@@ -172,6 +172,13 @@ public class JuegoHP {
             if (nombreH.equalsIgnoreCase(hechizoAtaque.nombrePoder)) {
                 return hechizoAtaque;
             }
+
+        }  
+        
+        for (HechizoDefensa hechizoDefensa : JuegoHP.HechizosDefensa) {
+            if (nombreH.equalsIgnoreCase(hechizoDefensa.nombrePoder)) {
+                return hechizoDefensa;
+            }
         }
         return null;
 

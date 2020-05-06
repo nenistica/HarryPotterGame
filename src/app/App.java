@@ -57,11 +57,9 @@ public class App {
                 } else {
                     JuegoHP.listaHechizosDefensa();
                     Hechizo hechizo2 = mijuegoHp.elegirHechizo();
-                    ((IHaceMagia) player2).atacar(player1, hechizo2);
+                    ((IHaceMagia) player2).atacar(player1, hechizo2); //DA ERROR NULL
                 }
-
-                turnoP1 = !turnoP1;
-
+               
             }
 
             turnoAtacar = !turnoAtacar;
