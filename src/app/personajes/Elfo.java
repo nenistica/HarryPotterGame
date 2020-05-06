@@ -67,11 +67,11 @@ public class Elfo extends Criatura implements IHaceMagia {
             
             this.energiaMagica -= hechizo.energiaMagicaHechizo;
             double saludVictima = (double) personaje.getSalud();
-            saludVictima -= (hechizo.nivelDanio)*(1+this.artefacto.amplificadorDeDanio);
+            saludVictima -= hechizo.nivelDanio;
             int salud1 = (int) saludVictima;
             personaje.setSalud(salud1);
             double saludAtacante = (double) this.getSalud();
-            saludAtacante += (hechizo.nivelCuracion)*(1+this.artefacto.amplificadorDeCuracion);
+            saludAtacante += hechizo.nivelCuracion;
             this.setSalud((int) saludAtacante);
         }
 
