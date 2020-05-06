@@ -80,6 +80,20 @@ public class JuegoHP {
         Muggle dudley = new Muggle("Dudley Dursley",80,18);
         JuegoHP.PersonajesLista.add(dudley);
 
+        Wizard snapey = new Wizard("Severus Snape", 90, 38, 150, true);
+        snapey.setPoderInicial(hechizo);
+        snapey.setArtefacto(varEspino);
+        JuegoHP.PersonajesLista.add(snapey);
+
+        Elfo kreachy = new Elfo("Kreacher", 50, 666, 150);
+        kreachy.setPoderInicial(invisibilidad);
+        JuegoHP.PersonajesLista.add(kreachy);
+
+        Wizard bella = new Wizard("Bellatrix Lestrange", 100, 47, 150, true);
+        bella.setPoderInicial(hechizo);
+        JuegoHP.PersonajesLista.add(bella);
+        
+
     }
 
     // Hechizos
@@ -183,9 +197,10 @@ public class JuegoHP {
             if (nombreH.equalsIgnoreCase(hechizoDefensa.nombrePoder)) {
                 return hechizoDefensa;
             }
+        
         }
-        return null;
-
+        
+         return null;
     }   
     
     public static void listaHechizosAtaques(){
