@@ -77,6 +77,9 @@ public class JuegoHP {
         dumby.setArtefacto(varSauco);
         JuegoHP.PersonajesLista.add(dumby);
 
+        Muggle dudley = new Muggle("Dudley Dursley",80,18);
+        JuegoHP.PersonajesLista.add(dudley);
+
     }
 
     // Hechizos
