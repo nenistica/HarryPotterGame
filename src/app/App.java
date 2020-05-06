@@ -27,33 +27,32 @@ public class App {
         boolean turnoP1 = true;
         boolean turnoAtacar = true;
 
-        if (player1 instanceof IHaceMagia) {
-            System.out.println("Si implementa IHaceMagia");
-        }
 
-        while (player1.estaVivo() && player2.estaVivo()) {
-            if (turnoAtacar) {
+        if (player1 instanceof IHaceMagia && player2 instanceof IHaceMagia) {
 
-                if (turnoP1) {
+            while (player1.estaVivo() && player2.estaVivo()) {
+                 if (turnoAtacar) {
+
+                    if (turnoP1) {
                     System.out.println("Turno de Ataque para el jugador "+player1.getNombre());
                     JuegoHP.listaHechizosAtaques();
                     Hechizo hechizo1 = mijuegoHp.elegirHechizo();
                     ((IHaceMagia) player1).atacar(player2, hechizo1);
                     System.out.println("La salud de "+player2.getNombre()+player2.getSalud());
 
-                } else {
+                    } else {
                     System.out.println("Turno de Ataque para el jugador "+player2.getNombre());
                     JuegoHP.listaHechizosAtaques();
                     Hechizo hechizo2 = mijuegoHp.elegirHechizo();
                     ((IHaceMagia) player2).atacar(player1, hechizo2);
                     System.out.println("La salud de "+player1.getNombre()+player1.getSalud());
-                }
+                 }
 
-                turnoP1 = !turnoP1;
+                    turnoP1 = !turnoP1;
 
-            }else {
+                }else {
                 
-                if (turnoP1) {
+                    if (turnoP1) {
                     System.out.println("Turno de Defensa para el jugador "+player1.getNombre());
                     JuegoHP.listaHechizosDefensa();
                     Hechizo hechizo1 = mijuegoHp.elegirHechizo();
@@ -61,26 +60,27 @@ public class App {
                     System.out.println("La salud de "+player2.getNombre()+player2.getSalud());
                     System.out.println("La salud de "+player1.getNombre()+player1.getSalud());
 
-                } else {
+                    } else {
                     System.out.println("Turno de Defensa para el jugador "+player2.getNombre());
                     JuegoHP.listaHechizosDefensa();
                     Hechizo hechizo2 = mijuegoHp.elegirHechizo();
                     ((IHaceMagia) player2).atacar(player1, hechizo2); //DA ERROR NULL
                     System.out.println("La salud de "+player1.getNombre()+player1.getSalud());
                     System.out.println("La salud de "+player2.getNombre()+player2.getSalud());
-                }
+                 }
                
+             }
+
+             turnoAtacar = !turnoAtacar;
+
             }
-
-            turnoAtacar = !turnoAtacar;
-
         }
 
         if (player1.estaVivo()){
-            System.out.println("El ganador es:"+player1.getNombre());
+            System.out.println("El ganador es: "+player1.getNombre());
         }
         else{
-            System.out.println("El ganador es:"+player2.getNombre());
+            System.out.println("El ganador es: "+player2.getNombre());
         }
 
     }

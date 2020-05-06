@@ -147,8 +147,6 @@ public class JuegoHP {
     }
 
     public static void inicioJuegoHP() {
-        JuegoHP.listaHechizosAtaques();
-        JuegoHP.listaHechizosDefensa();
         JuegoHP.agregarPersonajes();
         JuegoHP.mostrarListaPersonajes();
         System.out.println(" ");
