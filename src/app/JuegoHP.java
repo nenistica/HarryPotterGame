@@ -25,9 +25,10 @@ public class JuegoHP {
         Poder invisibilidad = new Invisibilidad("Invisibilidad", "Se hace invisible a todos");
         Poder metamorfosis = new Metamorfosis("Metamorfosis", "Se puede cambiar de forma");
         Poder hechizo = new Hechizo("Hechizo", "Capacidad de ejecutar hechizos", false, 0, 0, 0);
+        Poder viajartiempo = new ViajarTiempo("Viajar en el Tiempo", "Permite ir al pasado durante varias horas");
 
         Artefacto capaInvisible = new CapaInvisibilidad("Capa Invisibilidad", 0, 0.4, invisibilidad);
-        Artefacto giratiempo = new Giratiempo("Giratiempo", 0, 0.3, parsel);
+        Artefacto giratiempo = new Giratiempo("Giratiempo", 0, 0.3, viajartiempo);
         Artefacto varFresno = new Varita("Varita de fresno", 0.2, 0.3, hechizo);
         Artefacto varEspino = new Varita("Varita de Espino", 0.3, 0.1, hechizo);
         Artefacto varSauco = new Varita("Varita de Sauco", 1, 0.6, hechizo);
