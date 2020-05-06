@@ -13,7 +13,7 @@ public interface IHaceMagia {
 
     public Poder getPoderInicial();
 
-    public void setPoder(Poder poder);
+    public void setPoderInicial(Poder poderInicial);
 
     public Artefacto getArtefacto();
     

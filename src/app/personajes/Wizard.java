@@ -1,7 +1,6 @@
 package app.personajes;
 
 import java.util.List;
-
 import app.artefactos.Artefacto;
 import app.interfaces.IHaceMagia;
 import app.poderes.Poder;
@@ -24,6 +23,7 @@ public class Wizard extends Persona implements IHaceMagia {
 
     }
 
+    @Override
     public void setPoderInicial(Poder poderInicial) {
         this.poderInicial = poderInicial;
     }
@@ -42,11 +42,6 @@ public class Wizard extends Persona implements IHaceMagia {
 
     @Override
     public void atacar(Personaje personaje, String hechizo) {
-
-    }
-
-    @Override
-    public void setPoder(Poder poder) {
 
     }
 
@@ -72,14 +67,29 @@ public class Wizard extends Persona implements IHaceMagia {
     public void atacar(Personaje personaje, Hechizo hechizo) {
         // buscar el nivelDanio de hechizo y se lo resta a la salud de personaje
         if (this.energiaMagica >= hechizo.energiaMagicaHechizo) {
+            
             this.energiaMagica -= hechizo.energiaMagicaHechizo;
+
             if ((this.magoOscuro == false) && (hechizo.esOscuro == true)) {
+
                 this.magoOscuro = true;
-                personaje.setSalud(hechizo.nivelDanio);
-                this.setSalud(hechizo.nivelCuracion);
+                double saludVictima = (double) personaje.getSalud();
+                saludVictima -= (2*(hechizo.nivelDanio)*(1+this.artefacto.amplificadorDeDanio));
+                personaje.setSalud((int) saludVictima);
+                double saludAtacante = (double) this.getSalud();
+                saludAtacante += (2*(hechizo.nivelCuracion)*(1+this.artefacto.amplificadorDeCuracion));
+                this.setSalud((int) saludAtacante);
     
             } else {
-                personaje.setSalud(hechizo.nivelDanio);
+
+                double saludVictima = (double) personaje.getSalud();
+                saludVictima -= (hechizo.nivelDanio)*(1+this.artefacto.amplificadorDeDanio);
+                int salud1 = (int) saludVictima;
+                personaje.setSalud(salud1);
+                double saludAtacante = (double) this.getSalud();
+                saludAtacante += (hechizo.nivelCuracion)*(1+this.artefacto.amplificadorDeCuracion);
+                this.setSalud((int) saludAtacante);
+
             }
         }else{
             System.out.println("No tienes suficiente energia mágica para realizar el hechizo.");

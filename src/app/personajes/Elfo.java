@@ -48,11 +48,6 @@ public class Elfo extends Criatura implements IHaceMagia {
         return poderInicial;
     }
 
-    @Override
-    public void setPoder(Poder poder) {
-        this.poderInicial = poder;
-
-    }
 
     @Override
     public Artefacto getArtefacto() {
@@ -68,11 +63,17 @@ public class Elfo extends Criatura implements IHaceMagia {
     @Override
     public void atacar(Personaje personaje, Hechizo hechizo) {
         // busca el nivelDanio de hechizo y se lo resta a la salud de personaje
-        personaje.setSalud(hechizo.nivelDanio);
-        if (this.energiaMagica >= hechizo.energiaMagicaHechizo){
-        this.energiaMagica -= hechizo.energiaMagicaHechizo;
+        if (this.energiaMagica >= hechizo.energiaMagicaHechizo) {
+            
+            this.energiaMagica -= hechizo.energiaMagicaHechizo;
+            double saludVictima = (double) personaje.getSalud();
+            saludVictima -= (hechizo.nivelDanio)*(1+this.artefacto.amplificadorDeDanio);
+            int salud1 = (int) saludVictima;
+            personaje.setSalud(salud1);
+            double saludAtacante = (double) this.getSalud();
+            saludAtacante += (hechizo.nivelCuracion)*(1+this.artefacto.amplificadorDeCuracion);
+            this.setSalud((int) saludAtacante);
         }
-        
 
     }
 
@@ -80,6 +81,11 @@ public class Elfo extends Criatura implements IHaceMagia {
     public void atacar(Personaje personaje, String hechizo) {
         
 
+    }
+
+    @Override
+    public void setPoderInicial(Poder poderInicial) {
+        this.poderInicial = poderInicial;
     }
 
 }
