@@ -90,7 +90,7 @@ public class JuegoHP {
         Imperius imppy = new Imperius("Imperius", "Controlar a la victima", true, 30, 0, 20);
         JuegoHP.HechizosAtaque.add(imppy);
 
-        PetrificusTotalus petri = new PetrificusTotalus("Petrificus Totales", "Parálisis de cuerpo", false, 20, 0, 10);
+        PetrificusTotalus petri = new PetrificusTotalus("Petrificus Totalus", "Parálisis de cuerpo", false, 20, 0, 10);
         JuegoHP.HechizosAtaque.add(petri);
 
         SectumSempra sectty = new SectumSempra("Sectum Sempra", "Profundos cortes a la victima", false, 25, 0, 15);

@@ -35,14 +35,18 @@ public class App {
             if (turnoAtacar) {
 
                 if (turnoP1) {
+                    System.out.println("Turno de Ataque para el jugador "+player1.getNombre());
                     JuegoHP.listaHechizosAtaques();
                     Hechizo hechizo1 = mijuegoHp.elegirHechizo();
                     ((IHaceMagia) player1).atacar(player2, hechizo1);
+                    System.out.println("La salud de "+player2.getNombre()+player2.getSalud());
 
                 } else {
+                    System.out.println("Turno de Ataque para el jugador "+player2.getNombre());
                     JuegoHP.listaHechizosAtaques();
                     Hechizo hechizo2 = mijuegoHp.elegirHechizo();
                     ((IHaceMagia) player2).atacar(player1, hechizo2);
+                    System.out.println("La salud de "+player1.getNombre()+player1.getSalud());
                 }
 
                 turnoP1 = !turnoP1;
@@ -50,20 +54,33 @@ public class App {
             }else {
                 
                 if (turnoP1) {
+                    System.out.println("Turno de Defensa para el jugador "+player1.getNombre());
                     JuegoHP.listaHechizosDefensa();
                     Hechizo hechizo1 = mijuegoHp.elegirHechizo();
                     ((IHaceMagia) player1).atacar(player2, hechizo1);
+                    System.out.println("La salud de "+player2.getNombre()+player2.getSalud());
+                    System.out.println("La salud de "+player1.getNombre()+player1.getSalud());
 
                 } else {
+                    System.out.println("Turno de Defensa para el jugador "+player2.getNombre());
                     JuegoHP.listaHechizosDefensa();
                     Hechizo hechizo2 = mijuegoHp.elegirHechizo();
                     ((IHaceMagia) player2).atacar(player1, hechizo2); //DA ERROR NULL
+                    System.out.println("La salud de "+player1.getNombre()+player1.getSalud());
+                    System.out.println("La salud de "+player2.getNombre()+player2.getSalud());
                 }
                
             }
 
             turnoAtacar = !turnoAtacar;
 
+        }
+
+        if (player1.estaVivo()){
+            System.out.println("El ganador es:"+player1.getNombre());
+        }
+        else{
+            System.out.println("El ganador es:"+player2.getNombre());
         }
 
     }
