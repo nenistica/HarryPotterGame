@@ -25,6 +25,11 @@ public class App {
         
         //Personaje player1 = seleccionaPersonaje();
         //Personaje player2 = seleccionaPersonaje();
+        boolean turnoP1 = true;
+        
+        if (player1 instanceof IHaceMagia){
+            System.out.println("Si implementaIHaceMagia");
+        }
 
 
 
