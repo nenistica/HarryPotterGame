@@ -6,6 +6,7 @@ import java.util.Scanner;
 import app.artefactos.Artefacto;
 import app.artefactos.CapaInvisibilidad;
 import app.artefactos.Giratiempo;
+import app.artefactos.Horrocrux;
 import app.artefactos.Varita;
 import app.personajes.Elfo;
 import app.personajes.Personaje;
@@ -53,7 +54,11 @@ public class JuegoHP {
 
         Artefacto capaInvisible = new CapaInvisibilidad("Capa Invisibilidad", 0, 0.4,invisibilidad);
         Artefacto giratiempo = new Giratiempo("Giratiempo", 0, 0.3,parsel);
-        Artefacto varitafresno = new Varita("Varita de fresno",0.2, 0.3,hechizo);
+        Artefacto varFresno = new Varita("Varita de fresno",0.2, 0.3,hechizo);
+        Artefacto varEspino = new Varita("Varita de Espino", 0.3, 0.1, hechizo);
+        Artefacto varSauco = new Varita("Varita de Sauco", 1, 0.6, hechizo);
+        Artefacto horrocruxy = new Horrocrux("Horrocrux", 0.9, 0, hechizo);
+        
 
         Wizard harry = new Wizard("Harry Potter", 100, 17, 150, false);
         harry.setArtefacto(capaInvisible);
@@ -70,8 +75,34 @@ public class JuegoHP {
         JuegoHP.PersonajesLista.add(hermy);
 
         Wizard ron = new Wizard("Ron Weasly",100,17,150,false);
-        ron.setArtefacto(varitafresno);
+        ron.setArtefacto(varFresno);
         JuegoHP.PersonajesLista.add(ron);
+
+        Wizard draquito = new Wizard("Draco Malfoy", 100, 17, 150, true);
+        draquito.setPoderInicial(hechizo);
+        draquito.setArtefacto(varEspino);
+        JuegoHP.PersonajesLista.add(draquito);
+
+        Wizard lunita = new Wizard("Luna Lovegood", 100, 16, 150, false);
+        lunita.setPoderInicial(hechizo);
+        lunita.setArtefacto(varFresno);
+        JuegoHP.PersonajesLista.add(lunita);
+
+        Wizard newtty = new Wizard("Newt Scamander", 100, 25, 150, false);
+        newtty.setPoderInicial(hechizo);
+        newtty.setArtefacto(varFresno);
+        JuegoHP.PersonajesLista.add(newtty);
+
+        Wizard voldy = new Wizard("Lord Voldemort", 100, 71, 150, true);
+        voldy.setPoderInicial(parsel);
+        voldy.setArtefacto(horrocruxy);
+        JuegoHP.PersonajesLista.add(voldy);
+
+        Wizard dumby = new Wizard("Albus Dumbledore", 100, 116, 150, false);
+        dumby.setPoderInicial(hechizo);
+        dumby.setArtefacto(varSauco);
+        JuegoHP.PersonajesLista.add(dumby);
+        
     }
 
     // Hechizos
