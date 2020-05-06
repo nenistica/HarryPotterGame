@@ -130,6 +130,7 @@ public class JuegoHP {
 
     public static void inicioJuegoHP() {
         JuegoHP.listaHechizosAtaques();
+        JuegoHP.listaHechizosDefensa();
         JuegoHP.agregarPersonajes();
         JuegoHP.mostrarListaPersonajes();
         System.out.println(" ");
@@ -177,10 +178,21 @@ public class JuegoHP {
     }   
     
     public static void listaHechizosAtaques(){
+        System.out.println("LISTA HECHIZOS DE ATAQUE");
         for(int i = 0; i<JuegoHP.HechizosAtaque.size(); i++) { 
             Hechizo h = JuegoHP.HechizosAtaque.get(i);
             System.out.println(h.nombrePoder);
         }
+    }
+
+    public static void listaHechizosDefensa(){
+        System.out.println("LISTA HECHIZOS DE DEFENSA");
+        for(int i = 0; i<JuegoHP.HechizosDefensa.size(); i++) { 
+            Hechizo h = JuegoHP.HechizosDefensa.get(i);
+            System.out.println(h.nombrePoder);
+        }
+
+
     }
 
 }

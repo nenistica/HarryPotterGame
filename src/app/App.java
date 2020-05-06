@@ -25,24 +25,47 @@ public class App {
         System.out.println(player1.getNombre());
 
         boolean turnoP1 = true;
+        boolean turnoAtacar = true;
 
         if (player1 instanceof IHaceMagia) {
             System.out.println("Si implementa IHaceMagia");
         }
 
         while (player1.estaVivo() && player2.estaVivo()) {
-            if (turnoP1) {
-                JuegoHP.listaHechizosAtaques();
-                Hechizo hechizo1 = mijuegoHp.elegirHechizo();
-                ((IHaceMagia) player1).atacar(player2, hechizo1);
+            if (turnoAtacar) {
 
-            } else {
-                JuegoHP.listaHechizosAtaques();
-                Hechizo hechizo2 = mijuegoHp.elegirHechizo();
-                ((IHaceMagia) player2).atacar(player1, hechizo2);
+                if (turnoP1) {
+                    JuegoHP.listaHechizosAtaques();
+                    Hechizo hechizo1 = mijuegoHp.elegirHechizo();
+                    ((IHaceMagia) player1).atacar(player2, hechizo1);
+
+                } else {
+                    JuegoHP.listaHechizosAtaques();
+                    Hechizo hechizo2 = mijuegoHp.elegirHechizo();
+                    ((IHaceMagia) player2).atacar(player1, hechizo2);
+                }
+
+                turnoP1 = !turnoP1;
+
+            }else {
+                
+                if (turnoP1) {
+                    JuegoHP.listaHechizosDefensa();
+                    Hechizo hechizo1 = mijuegoHp.elegirHechizo();
+                    ((IHaceMagia) player1).atacar(player2, hechizo1);
+
+                } else {
+                    JuegoHP.listaHechizosDefensa();
+                    Hechizo hechizo2 = mijuegoHp.elegirHechizo();
+                    ((IHaceMagia) player2).atacar(player1, hechizo2);
+                }
+
+                turnoP1 = !turnoP1;
+
             }
 
-            turnoP1 = !turnoP1;
+            turnoAtacar = !turnoAtacar;
+
         }
 
     }
