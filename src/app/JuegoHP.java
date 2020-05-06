@@ -39,7 +39,7 @@ public class JuegoHP {
         JuegoHP.PersonajesLista.add(harry);
 
         Elfo dobby = new Elfo("Dobby", 100, 60, 150);
-        dobby.setPoder(metamorfosis);
+        dobby.setPoderInicial(metamorfosis);
         JuegoHP.PersonajesLista.add(dobby);
 
         Wizard hermy = new Wizard("Hermione Granger", 100, 17, 150, false);
@@ -102,8 +102,7 @@ public class JuegoHP {
         Reparifors reppi = new Reparifors("Reparifors", "Cura dolencias pequeñas", false, 0, 20, 12);
         JuegoHP.HechizosCuracion.add(reppi);
 
-        VulneraSanetur vully = new VulneraSanetur("Vulnera Sanetur", "Reduce hemorragia y cierra heridas", false, 0, 30,
-                20);
+        VulneraSanetur vully = new VulneraSanetur("Vulnera Sanetur", "Reduce hemorragia y cierra heridas", false, 0, 30, 20);
         JuegoHP.HechizosCuracion.add(vully);
 
         CaveInimicum cavvy = new CaveInimicum("Cave Inimicum", "Proteccion aleja enemigos", false, 30, 20, 40);
@@ -130,6 +129,7 @@ public class JuegoHP {
     }
 
     public static void inicioJuegoHP() {
+        JuegoHP.listaHechizosAtaques();
         JuegoHP.agregarPersonajes();
         JuegoHP.mostrarListaPersonajes();
         System.out.println(" ");
@@ -174,6 +174,13 @@ public class JuegoHP {
         }
         return null;
 
+    }   
+    
+    public static void listaHechizosAtaques(){
+        for(int i = 0; i<JuegoHP.HechizosAtaque.size(); i++) { 
+            Hechizo h = JuegoHP.HechizosAtaque.get(i);
+            System.out.println(h.nombrePoder);
+        }
     }
 
 }
