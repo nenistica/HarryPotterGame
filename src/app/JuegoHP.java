@@ -91,6 +91,7 @@ public class JuegoHP {
 
         Wizard bella = new Wizard("Bellatrix Lestrange", 100, 47, 150, true);
         bella.setPoderInicial(hechizo);
+        bella.setArtefacto(varEspino);
         JuegoHP.PersonajesLista.add(bella);
         
 
