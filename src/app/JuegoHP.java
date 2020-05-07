@@ -22,8 +22,6 @@ public class JuegoHP {
 
     public static void agregarPersonajes() {
 
-        
-
         Poder parsel = new Parseltongue("Lengua Parsel", "Pude hablar con serpientes");
         Poder invisibilidad = new Invisibilidad("Invisibilidad", "Se hace invisible a todos");
         Poder metamorfosis = new Metamorfosis("Metamorfosis", "Se puede cambiar de forma");
@@ -37,7 +35,7 @@ public class JuegoHP {
         Artefacto varSauco = new Varita("Varita de Sauco", 1, 0.6, hechizo);
         Artefacto horrocruxy = new Horrocrux("Horrocrux", 0.9, 0, hechizo);
 
-        Wizard harry = new Wizard("Harry Potter", 100, 17, 150, false,hechizoPersonaje);
+        Wizard harry = new Wizard("Harry Potter", 100, 17, 150, false, hechizoPersonaje);
         harry.setArtefacto(capaInvisible);
         harry.setPoderInicial(parsel);
         JuegoHP.PersonajesLista.add(harry);
@@ -46,44 +44,44 @@ public class JuegoHP {
         dobby.setPoderInicial(metamorfosis);
         JuegoHP.PersonajesLista.add(dobby);
 
-        Wizard hermy = new Wizard("Hermione Granger", 100, 17, 150, false,hechizoPersonaje);
+        Wizard hermy = new Wizard("Hermione Granger", 100, 17, 150, false, hechizoPersonaje);
         hermy.setPoderInicial(parsel);
         hermy.setArtefacto(giratiempo);
         JuegoHP.PersonajesLista.add(hermy);
 
-        Wizard ron = new Wizard("Ron Weasley", 100, 17, 150, false,hechizoPersonaje);
+        Wizard ron = new Wizard("Ron Weasley", 100, 17, 150, false, hechizoPersonaje);
         ron.setArtefacto(varFresno);
         JuegoHP.PersonajesLista.add(ron);
 
-        Wizard draquito = new Wizard("Draco Malfoy", 100, 17, 150, true,hechizoPersonaje);
+        Wizard draquito = new Wizard("Draco Malfoy", 100, 17, 150, true, hechizoPersonaje);
         draquito.setPoderInicial(hechizo);
         draquito.setArtefacto(varEspino);
         JuegoHP.PersonajesLista.add(draquito);
 
-        Wizard lunita = new Wizard("Luna Lovegood", 100, 16, 150, false,hechizoPersonaje);
+        Wizard lunita = new Wizard("Luna Lovegood", 100, 16, 150, false, hechizoPersonaje);
         lunita.setPoderInicial(hechizo);
         lunita.setArtefacto(varFresno);
         JuegoHP.PersonajesLista.add(lunita);
 
-        Wizard newtty = new Wizard("Newt Scamander", 100, 25, 150, false,hechizoPersonaje);
+        Wizard newtty = new Wizard("Newt Scamander", 100, 25, 150, false, hechizoPersonaje);
         newtty.setPoderInicial(hechizo);
         newtty.setArtefacto(varFresno);
         JuegoHP.PersonajesLista.add(newtty);
 
-        Wizard voldy = new Wizard("Lord Voldemort", 100, 71, 150, true,hechizoPersonaje);
+        Wizard voldy = new Wizard("Lord Voldemort", 100, 71, 150, true, hechizoPersonaje);
         voldy.setPoderInicial(parsel);
         voldy.setArtefacto(horrocruxy);
         JuegoHP.PersonajesLista.add(voldy);
 
-        Wizard dumby = new Wizard("Albus Dumbledore", 100, 116, 150, false,hechizoPersonaje);
+        Wizard dumby = new Wizard("Albus Dumbledore", 100, 116, 150, false, hechizoPersonaje);
         dumby.setPoderInicial(hechizo);
         dumby.setArtefacto(varSauco);
         JuegoHP.PersonajesLista.add(dumby);
 
-        Muggle dudley = new Muggle("Dudley Dursley",80,18);
+        Muggle dudley = new Muggle("Dudley Dursley", 80, 18);
         JuegoHP.PersonajesLista.add(dudley);
 
-        Wizard snapey = new Wizard("Severus Snape", 90, 38, 150, true,hechizoPersonaje);
+        Wizard snapey = new Wizard("Severus Snape", 90, 38, 150, true, hechizoPersonaje);
         snapey.setPoderInicial(hechizo);
         snapey.setArtefacto(varEspino);
         JuegoHP.PersonajesLista.add(snapey);
@@ -92,11 +90,10 @@ public class JuegoHP {
         kreachy.setPoderInicial(invisibilidad);
         JuegoHP.PersonajesLista.add(kreachy);
 
-        Wizard bella = new Wizard("Bellatrix Lestrange", 100, 47, 150, true,hechizoPersonaje);
+        Wizard bella = new Wizard("Bellatrix Lestrange", 100, 47, 150, true, hechizoPersonaje);
         bella.setPoderInicial(hechizo);
         bella.setArtefacto(varEspino);
         JuegoHP.PersonajesLista.add(bella);
-        
 
     }
 
@@ -124,7 +121,8 @@ public class JuegoHP {
         Reparifors reppi = new Reparifors("Reparifors", "Cura dolencias pequeñas", false, 0, 20, 12);
         JuegoHP.HechizosCuracion.add(reppi);
 
-        VulneraSanetur vully = new VulneraSanetur("Vulnera Sanetur", "Reduce hemorragia y cierra heridas", false, 0, 30, 20);
+        VulneraSanetur vully = new VulneraSanetur("Vulnera Sanetur", "Reduce hemorragia y cierra heridas", false, 0, 30,
+                20);
         JuegoHP.HechizosCuracion.add(vully);
 
         CaveInimicum cavvy = new CaveInimicum("Cave Inimicum", "Proteccion aleja enemigos", false, 30, 20, 40);
@@ -184,7 +182,7 @@ public class JuegoHP {
         }
     }
 
-    public Hechizo elegirHechizo() { //Preguntar el forloop para imprimir la lista de hechizos.
+    public Hechizo elegirHechizo() { // Preguntar el forloop para imprimir la lista de hechizos.
         String nombreH;
         System.out.println("Escribe el nombre del hechizo: ");
         nombreH = Teclado.nextLine();
@@ -193,34 +191,57 @@ public class JuegoHP {
                 return hechizoAtaque;
             }
 
-        }  
-        
+        }
+
         for (HechizoDefensa hechizoDefensa : JuegoHP.HechizosDefensa) {
             if (nombreH.equalsIgnoreCase(hechizoDefensa.nombrePoder)) {
                 return hechizoDefensa;
             }
-        
+
         }
-        
-         return null;
-    }   
-    
-    public static void listaHechizosAtaques(){
+
+        return null;
+    }
+
+    public static void listaHechizosAtaques() {
         System.out.println("LISTA HECHIZOS DE ATAQUE");
-        for(int i = 0; i<JuegoHP.HechizosAtaque.size(); i++) { 
+        for (int i = 0; i < JuegoHP.HechizosAtaque.size(); i++) {
             Hechizo h = JuegoHP.HechizosAtaque.get(i);
             System.out.println(h.nombrePoder);
         }
     }
 
-    public static void listaHechizosDefensa(){
+    public static void listaHechizosDefensa() {
         System.out.println("LISTA HECHIZOS DE DEFENSA");
-        for(int i = 0; i<JuegoHP.HechizosDefensa.size(); i++) { 
+        for (int i = 0; i < JuegoHP.HechizosDefensa.size(); i++) {
             Hechizo h = JuegoHP.HechizosDefensa.get(i);
             System.out.println(h.nombrePoder);
         }
 
+    }
 
+    static Random randomPersonaje; // Personaje BOT
+
+    public static Personaje elegirPersonajeAleatorio() {
+        randomPersonaje = new Random();
+        Personaje personajeAleatorio = PersonajesLista.get(PersonajesLista.size());
+        return personajeAleatorio;
+    }
+
+    static Random randomAtaque; // Personaje BOT
+
+    public static HechizoAtaque elegirHechizoAtaqueAleatorio() {
+        randomAtaque = new Random();
+        HechizoAtaque hechizoAtaqueAleatorio = HechizosAtaque.get(HechizosAtaque.size());
+        return hechizoAtaqueAleatorio;
+    }
+
+    static Random randomDefensa; // Personaje BOT
+
+    public static HechizoDefensa elegirHechizoDefensaAleatorio() {
+        randomDefensa = new Random();
+        HechizoDefensa hechizoDefensaAleatorio = HechizosDefensa.get(HechizosDefensa.size());
+        return hechizoDefensaAleatorio;
     }
 
 }
