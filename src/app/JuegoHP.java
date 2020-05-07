@@ -222,17 +222,20 @@ public class JuegoHP {
 
     static Random randomPersonaje; // Personaje BOT
 
+    
+    static Random randomAtaque; // Personaje BOT
+
+    
     public static Personaje elegirPersonajeAleatorio() {
         randomPersonaje = new Random();
-        Personaje personajeAleatorio = PersonajesLista.get(PersonajesLista.size());
+        Personaje personajeAleatorio = PersonajesLista.get(PersonajesLista.size()-1);
         return personajeAleatorio;
     }
 
-    static Random randomAtaque; // Personaje BOT
 
     public static HechizoAtaque elegirHechizoAtaqueAleatorio() {
         randomAtaque = new Random();
-        HechizoAtaque hechizoAtaqueAleatorio = HechizosAtaque.get(HechizosAtaque.size());
+        HechizoAtaque hechizoAtaqueAleatorio = HechizosAtaque.get(HechizosAtaque.size()-1);
         return hechizoAtaqueAleatorio;
     }
 
@@ -240,8 +243,9 @@ public class JuegoHP {
 
     public static HechizoDefensa elegirHechizoDefensaAleatorio() {
         randomDefensa = new Random();
-        HechizoDefensa hechizoDefensaAleatorio = HechizosDefensa.get(HechizosDefensa.size());
+        HechizoDefensa hechizoDefensaAleatorio = HechizosDefensa.get(HechizosDefensa.size()-1);
         return hechizoDefensaAleatorio;
     }
+
 
 }
