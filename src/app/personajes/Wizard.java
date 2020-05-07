@@ -84,7 +84,12 @@ public class Wizard extends Persona implements IHaceMagia {
                 personaje.setSalud((int) saludVictima);
                 double saludAtacante = (double) this.getSalud();
                 saludAtacante += (2*(hechizo.nivelCuracion)*(1+this.artefacto.amplificadorDeCuracion));
-                this.setSalud((int) saludAtacante);
+                if (saludAtacante <= 100) {
+                  this.setSalud((int) saludAtacante);  
+                }else{
+                    this.setSalud(100);
+                }
+                
     
             } else {
 
@@ -95,6 +100,11 @@ public class Wizard extends Persona implements IHaceMagia {
                 double saludAtacante = (double) this.getSalud();
                 saludAtacante += (hechizo.nivelCuracion)*(1+this.artefacto.amplificadorDeCuracion);
                 this.setSalud((int) saludAtacante);
+                if (saludAtacante <= 100) {
+                    this.setSalud((int) saludAtacante);  
+                  }else{
+                      this.setSalud(100);
+                  }
 
             }
         }else{
