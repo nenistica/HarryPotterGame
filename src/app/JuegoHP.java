@@ -121,8 +121,7 @@ public class JuegoHP {
         Reparifors reppi = new Reparifors("Reparifors", "Cura dolencias pequeñas", false, 0, 20, 12);
         JuegoHP.HechizosCuracion.add(reppi);
 
-        VulneraSanetur vully = new VulneraSanetur("Vulnera Sanetur", "Reduce hemorragia y cierra heridas", false, 0, 30,
-                20);
+        VulneraSanetur vully = new VulneraSanetur("Vulnera Sanetur", "Reduce hemorragia y cierra heridas", false, 0, 30, 20);
         JuegoHP.HechizosCuracion.add(vully);
 
         CaveInimicum cavvy = new CaveInimicum("Cave Inimicum", "Proteccion aleja enemigos", false, 30, 20, 40);
