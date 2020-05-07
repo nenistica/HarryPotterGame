@@ -33,6 +33,7 @@ public class App {
                         System.out.println("\nTurno de Ataque para el jugador " + player1.getNombre());
                         JuegoHP.listaHechizosAtaques();
                         Hechizo hechizo1 = mijuegoHp.elegirHechizo();
+                        ((IHaceMagia) player1).aprender(hechizo1);
                         ((IHaceMagia) player1).atacar(player2, hechizo1);
                         System.out.println("\nLa salud de " + player2.getNombre() + " es: " + player2.getSalud());
                         System.out.println("La salud de " + player1.getNombre() + " es: " + player1.getSalud());
@@ -42,6 +43,7 @@ public class App {
                         JuegoHP.listaHechizosAtaques();
                         Hechizo hechizo2 = mijuegoHp.elegirHechizo();
                         ((IHaceMagia) player2).atacar(player1, hechizo2);
+                        ((IHaceMagia) player2).aprender(hechizo2);
                         System.out.println("\nLa salud de " + player1.getNombre() + " es: " + player1.getSalud());
                         System.out.println("La salud de  " + player2.getNombre() + " es: " + player2.getSalud());
                     }
@@ -55,6 +57,7 @@ public class App {
                         JuegoHP.listaHechizosDefensa();
                         Hechizo hechizo1 = mijuegoHp.elegirHechizo();
                         ((IHaceMagia) player1).atacar(player2, hechizo1);
+                        ((IHaceMagia) player1).aprender(hechizo1);
                         System.out.println("\nLa salud de  " + player2.getNombre() + " es: " + player2.getSalud());
                         System.out.println("La salud de  " + player1.getNombre() + " es: " + player1.getSalud());
 
@@ -63,6 +66,7 @@ public class App {
                         JuegoHP.listaHechizosDefensa();
                         Hechizo hechizo2 = mijuegoHp.elegirHechizo();
                         ((IHaceMagia) player2).atacar(player1, hechizo2);
+                        ((IHaceMagia) player2).aprender(hechizo2);
                         System.out.println("\nLa salud de " + player1.getNombre() + " es: " + player1.getSalud());
                         System.out.println("La salud de " + player2.getNombre() + " es: " + player2.getSalud());
                     }

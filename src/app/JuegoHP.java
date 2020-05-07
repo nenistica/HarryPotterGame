@@ -18,8 +18,11 @@ public class JuegoHP {
     public static List<HechizoDefensa> HechizosDefensa = new ArrayList<HechizoDefensa>();
     public static List<HechizoCuracion> HechizosCuracion = new ArrayList<HechizoCuracion>();
     public static List<HechizoOcio> HechizosOcio = new ArrayList<HechizoOcio>();
+    public static List<Hechizo> hechizoPersonaje = new ArrayList<Hechizo>();
 
     public static void agregarPersonajes() {
+
+        
 
         Poder parsel = new Parseltongue("Lengua Parsel", "Pude hablar con serpientes");
         Poder invisibilidad = new Invisibilidad("Invisibilidad", "Se hace invisible a todos");
@@ -34,7 +37,7 @@ public class JuegoHP {
         Artefacto varSauco = new Varita("Varita de Sauco", 1, 0.6, hechizo);
         Artefacto horrocruxy = new Horrocrux("Horrocrux", 0.9, 0, hechizo);
 
-        Wizard harry = new Wizard("Harry Potter", 100, 17, 150, false);
+        Wizard harry = new Wizard("Harry Potter", 100, 17, 150, false,hechizoPersonaje);
         harry.setArtefacto(capaInvisible);
         harry.setPoderInicial(parsel);
         JuegoHP.PersonajesLista.add(harry);
@@ -43,36 +46,36 @@ public class JuegoHP {
         dobby.setPoderInicial(metamorfosis);
         JuegoHP.PersonajesLista.add(dobby);
 
-        Wizard hermy = new Wizard("Hermione Granger", 100, 17, 150, false);
+        Wizard hermy = new Wizard("Hermione Granger", 100, 17, 150, false,hechizoPersonaje);
         hermy.setPoderInicial(parsel);
         hermy.setArtefacto(giratiempo);
         JuegoHP.PersonajesLista.add(hermy);
 
-        Wizard ron = new Wizard("Ron Weasly", 100, 17, 150, false);
+        Wizard ron = new Wizard("Ron Weasley", 100, 17, 150, false,hechizoPersonaje);
         ron.setArtefacto(varFresno);
         JuegoHP.PersonajesLista.add(ron);
 
-        Wizard draquito = new Wizard("Draco Malfoy", 100, 17, 150, true);
+        Wizard draquito = new Wizard("Draco Malfoy", 100, 17, 150, true,hechizoPersonaje);
         draquito.setPoderInicial(hechizo);
         draquito.setArtefacto(varEspino);
         JuegoHP.PersonajesLista.add(draquito);
 
-        Wizard lunita = new Wizard("Luna Lovegood", 100, 16, 150, false);
+        Wizard lunita = new Wizard("Luna Lovegood", 100, 16, 150, false,hechizoPersonaje);
         lunita.setPoderInicial(hechizo);
         lunita.setArtefacto(varFresno);
         JuegoHP.PersonajesLista.add(lunita);
 
-        Wizard newtty = new Wizard("Newt Scamander", 100, 25, 150, false);
+        Wizard newtty = new Wizard("Newt Scamander", 100, 25, 150, false,hechizoPersonaje);
         newtty.setPoderInicial(hechizo);
         newtty.setArtefacto(varFresno);
         JuegoHP.PersonajesLista.add(newtty);
 
-        Wizard voldy = new Wizard("Lord Voldemort", 100, 71, 150, true);
+        Wizard voldy = new Wizard("Lord Voldemort", 100, 71, 150, true,hechizoPersonaje);
         voldy.setPoderInicial(parsel);
         voldy.setArtefacto(horrocruxy);
         JuegoHP.PersonajesLista.add(voldy);
 
-        Wizard dumby = new Wizard("Albus Dumbledore", 100, 116, 150, false);
+        Wizard dumby = new Wizard("Albus Dumbledore", 100, 116, 150, false,hechizoPersonaje);
         dumby.setPoderInicial(hechizo);
         dumby.setArtefacto(varSauco);
         JuegoHP.PersonajesLista.add(dumby);
@@ -80,7 +83,7 @@ public class JuegoHP {
         Muggle dudley = new Muggle("Dudley Dursley",80,18);
         JuegoHP.PersonajesLista.add(dudley);
 
-        Wizard snapey = new Wizard("Severus Snape", 90, 38, 150, true);
+        Wizard snapey = new Wizard("Severus Snape", 90, 38, 150, true,hechizoPersonaje);
         snapey.setPoderInicial(hechizo);
         snapey.setArtefacto(varEspino);
         JuegoHP.PersonajesLista.add(snapey);
@@ -89,7 +92,7 @@ public class JuegoHP {
         kreachy.setPoderInicial(invisibilidad);
         JuegoHP.PersonajesLista.add(kreachy);
 
-        Wizard bella = new Wizard("Bellatrix Lestrange", 100, 47, 150, true);
+        Wizard bella = new Wizard("Bellatrix Lestrange", 100, 47, 150, true,hechizoPersonaje);
         bella.setPoderInicial(hechizo);
         bella.setArtefacto(varEspino);
         JuegoHP.PersonajesLista.add(bella);
@@ -103,7 +106,7 @@ public class JuegoHP {
         AvadaKedavra avvy = new AvadaKedavra("Avada Kedavra", "Maldición de Muerte Total", true, 100, 0, 50);
         JuegoHP.HechizosAtaque.add(avvy);
 
-        Cruciatus cruccy = new Cruciatus("Cruciatus", "Maldición de Tortura Física", true, 40, 0, 30);
+        Cruciatus cruccy = new Cruciatus("Cruciatus", "Maldición de Tortura Física", true, 15, 0, 30);
         JuegoHP.HechizosAtaque.add(cruccy);
 
         Imperius imppy = new Imperius("Imperius", "Controlar a la victima", true, 30, 0, 20);
