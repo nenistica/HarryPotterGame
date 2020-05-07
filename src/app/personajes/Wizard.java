@@ -59,7 +59,10 @@ public class Wizard extends Persona implements IHaceMagia {
 
     @Override
     public void aprender(Hechizo h) {
-        this.hechizo.add(h);
+        if (!hechizo.contains(h)) {
+           this.hechizo.add(h); 
+        }
+        
 
     }
 
