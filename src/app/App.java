@@ -57,14 +57,8 @@ public class App {
                         JuegoHP.listaHechizosDefensa();
                         Hechizo hechizo1 = mijuegoHp.elegirHechizo();
                         ((IHaceMagia) player1).atacar(player2, hechizo1);
-<<<<<<< HEAD
-                        ((IHaceMagia) player1).aprender(hechizo1);
-                        System.out.println("\nLa salud de  " + player2.getNombre() + " es: " + player2.getSalud());
-                        System.out.println("La salud de  " + player1.getNombre() + " es: " + player1.getSalud());
-=======
                         System.out.println("\nLa salud de " + player2.getNombre() + " es: " + player2.getSalud());
                         System.out.println("La salud de " + player1.getNombre() + " es: " + player1.getSalud());
->>>>>>> 7ac0f86211c116e0932e717aada95fe47fa4d7d3
 
                     } else {
                         System.out.println("\nTurno de Defensa para el jugador: " + player2.getNombre());
