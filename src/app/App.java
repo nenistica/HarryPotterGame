@@ -98,6 +98,8 @@ public class App {
 
                 }
 
+                JuegoHP.gameOver(player0, playerAleatorio);
+
                 break;
             case 2:
                 JuegoHP.inicioJuegoHP();
@@ -158,32 +160,21 @@ public class App {
                         turnoAtacar = !turnoAtacar;
 
                     }
-                    if (player1.estaVivo()) {
-                        System.out.println("El ganador es: " + player1.getNombre());
-                        System.out.println(player2.getNombre() + " ha muerto.\n");
-                    } else {
-                        System.out.println("El ganador es: " + player2.getNombre());
-                        System.out.println(player1.getNombre() + " ha muerto.\n");
-                    }
-            
-                    System.out.println("    ██████   █████  ███    ███ ███████      ██████  ██    ██ ███████ ██████  ");
-                    System.out.println("    ██       ██   ██ ████  ████ ██          ██    ██ ██    ██ ██      ██   ██ ");
-                    System.out.println("    ██   ███ ███████ ██ ████ ██ █████       ██    ██ ██    ██ █████   ██████  ");
-                    System.out.println("    ██    ██ ██   ██ ██  ██  ██ ██          ██    ██  ██  ██  ██      ██   ██ ");
-                    System.out.println("     ██████  ██   ██ ██      ██ ███████      ██████    ████   ███████ ██   ██ ");
+                    
             
                 }
-                
+                JuegoHP.gameOver(player1, player2);
+                break;
     
-                }
+            }
 
 
                
-            break;
+           
         }
 
         
         
     }
   
-}
+
