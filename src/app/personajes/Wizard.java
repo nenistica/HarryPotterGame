@@ -80,7 +80,12 @@ public class Wizard extends Persona implements IHaceMagia {
 
                 this.magoOscuro = true;
                 double saludVictima = (double) personaje.getSalud();
-                saludVictima -= (2*(hechizo.nivelDanio)*(1+this.artefacto.amplificadorDeDanio));
+                if ( personaje instanceof Wizard){
+                    Artefacto artefactoVictima = ((IHaceMagia) personaje).getArtefacto();
+                    saludVictima -= (2*(hechizo.nivelDanio)*(1+this.artefacto.amplificadorDeDanio))*(1-artefactoVictima.amplificadorDeCuracion);
+                } else{
+                    saludVictima -= (2*(hechizo.nivelDanio)*(1+this.artefacto.amplificadorDeDanio));
+                }
                 personaje.setSalud((int) saludVictima);
                 double saludAtacante = (double) this.getSalud();
                 saludAtacante += (2*(hechizo.nivelCuracion)*(1+this.artefacto.amplificadorDeCuracion));
@@ -94,9 +99,13 @@ public class Wizard extends Persona implements IHaceMagia {
             } else {
 
                 double saludVictima = (double) personaje.getSalud();
-                saludVictima -= (hechizo.nivelDanio)*(1+this.artefacto.amplificadorDeDanio);
-                int salud1 = (int) saludVictima;
-                personaje.setSalud(salud1);
+                if ( personaje instanceof Wizard){
+                    Artefacto artefactoVictima = ((IHaceMagia) personaje).getArtefacto();
+                    saludVictima -= (hechizo.nivelDanio)*(1+this.artefacto.amplificadorDeDanio)*(1-artefactoVictima.amplificadorDeCuracion);
+                } else{
+                    saludVictima -= (hechizo.nivelDanio)*(1+this.artefacto.amplificadorDeDanio);
+                }
+                personaje.setSalud((int) saludVictima);
                 double saludAtacante = (double) this.getSalud();
                 saludAtacante += (hechizo.nivelCuracion)*(1+this.artefacto.amplificadorDeCuracion);
                 this.setSalud((int) saludAtacante);
