@@ -6,8 +6,15 @@ public class App {
     public static Scanner Teclado = new Scanner(System.in);
     
     public static void main(String[] args) throws Exception {
-        System.out.println("Harry Potter Game\n");
-        System.out.println("Creado por Alex, Maggie y Dani\n");
+       
+       System.out.println("#     #                               ######                                       #####                       "); 
+       System.out.println(" #     #   ##   #####  #####  #   #    #     #  ####  ##### ##### ###### #####     #     #   ##   #    # ###### ");
+       System.out.println(" #     #  #  #  #    # #    #  # #     #     # #    #   #     #   #      #    #    #        #  #  ##  ## #      ");
+       System.out.println(" ####### #    # #    # #    #   #      ######  #    #   #     #   #####  #    #    #  #### #    # # ## # #####  ");
+       System.out.println(" #     # ###### #####  #####    #      #       #    #   #     #   #      #####     #     # ###### #    # #    ");  
+       System.out.println(" #     # #    # #   #  #   #    #      #       #    #   #     #   #      #   #     #     # #    # #    # #      ");
+       System.out.println(" #     # #    # #    # #    #   #      #        ####    #     #   ###### #    #     #####  #    # #    # ###### ");
+       System.out.println("Creado por Alex, Maggie y Dani\n");                                                                                                                
 
         JuegoHP mijuegoHp = new JuegoHP();
 
