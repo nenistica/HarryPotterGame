@@ -21,7 +21,7 @@ public class Wizard extends Persona implements IHaceMagia {
         this.energiaMagica = energiaMagica;
         this.hechizo = hechizo;
         this.magoOscuro = magoOscuro;
-
+        this.escoba = escoba;
     }
 
     @Override
