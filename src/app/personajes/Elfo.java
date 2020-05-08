@@ -14,9 +14,10 @@ public class Elfo extends Criatura implements IHaceMagia {
     private int energiaMagica;
     private Poder poderInicial;
 
-    public Elfo(String nombre, int salud, int edad, int energiaMagica) {
+    public Elfo(String nombre, int salud, int edad, int energiaMagica,List<Hechizo> hechizo) {
         super(nombre,salud,edad);
         this.energiaMagica = energiaMagica;
+        this.hechizo = hechizo;
     }
 
     public void setArtefacto(Artefacto artefacto) {
@@ -56,7 +57,9 @@ public class Elfo extends Criatura implements IHaceMagia {
 
     @Override
     public void aprender(Hechizo h) {
-        this.hechizo.add(h);
+        if (!hechizo.contains(h)) {
+            this.hechizo.add(h); 
+         }
 
     }
 
