@@ -70,9 +70,13 @@ public class Elfo extends Criatura implements IHaceMagia {
             
             this.energiaMagica -= hechizo.energiaMagicaHechizo;
             double saludVictima = (double) personaje.getSalud();
-            saludVictima -= hechizo.nivelDanio;
-            int salud1 = (int) saludVictima;
-            personaje.setSalud(salud1);
+            if ( personaje instanceof Wizard){
+                Artefacto artefactoVictima = ((IHaceMagia) personaje).getArtefacto();
+                saludVictima -= (hechizo.nivelDanio)*(1-artefactoVictima.amplificadorDeCuracion);
+            } else{//si es muggle o elfo
+                saludVictima -= (hechizo.nivelDanio);
+            }
+            personaje.setSalud((int) saludVictima);
             double saludAtacante = (double) this.getSalud();
             saludAtacante += hechizo.nivelCuracion;
             if (saludAtacante <= 100) {

@@ -24,6 +24,7 @@ public class JuegoHP {
     public static List<Hechizo> HechizosDefensayCuracion = new ArrayList<Hechizo>();
     public static List<HechizoOcio> HechizosOcio = new ArrayList<HechizoOcio>();
     public static List<Hechizo> hechizoPersonaje = new ArrayList<Hechizo>();
+    public static List<Personaje> PersonajesExcluido = new ArrayList<Personaje>();
 
     
     
@@ -41,7 +42,7 @@ public class JuegoHP {
         Artefacto giratiempo = new Giratiempo("Giratiempo", 0, 0.3, viajartiempo);
         Artefacto varFresno = new Varita("Varita de fresno", 0.2, 0.3, hechizo);
         Artefacto varEspino = new Varita("Varita de Espino", 0.3, 0.1, hechizo);
-        Artefacto varSauco = new Varita("Varita de Sauco", 1, 0.6, hechizo);
+        Artefacto varSauco = new Varita("Varita de Sauco", 1, 0.5, hechizo);
         Artefacto horrocruxy = new Horrocrux("Horrocrux", 0.9, 0, hechizo);
 
         Wizard harry = new Wizard("Harry Potter", 100, 17, 150, false, hechizoPersonaje);
@@ -82,7 +83,7 @@ public class JuegoHP {
         voldy.setArtefacto(horrocruxy);
         JuegoHP.PersonajesLista.add(voldy);
 
-        Wizard dumby = new Wizard("Albus Dumbledore", 100, 116, 150, false, hechizoPersonaje);
+        Wizard dumby = new Wizard("Albus Dumbledore", 75, 116, 150, false, hechizoPersonaje);
         dumby.setPoderInicial(hechizo);
         dumby.setArtefacto(varSauco);
         JuegoHP.PersonajesLista.add(dumby);
@@ -109,7 +110,7 @@ public class JuegoHP {
     // Hechizos
     public static void agregarHechizos() {
 
-        AvadaKedavra avvy = new AvadaKedavra("Avada Kedavra", "Maldición de Muerte Total", true, 100, 0, 40);
+        AvadaKedavra avvy = new AvadaKedavra("Avada Kedavra", "Maldición de Muerte Total", true, 160, 0, 40);
         JuegoHP.HechizosAtaque.add(avvy);
 
         Cruciatus cruccy = new Cruciatus("Cruciatus", "Maldición de Tortura Física", true, 15, 0, 20);
@@ -232,9 +233,21 @@ public class JuegoHP {
 
     public static Random randomAtaque; // Personaje BOT
 
-    public static Personaje elegirPersonajeAleatorio() {
+    public static List<Personaje> excluirPersonaje(Personaje player1){
+        String nombrePersonaje = player1.getNombre();
+        for (Personaje personaje : JuegoHP.PersonajesLista) {
+            if (!nombrePersonaje.equalsIgnoreCase(personaje.getNombre())) {
+                JuegoHP.PersonajesExcluido.add(personaje);
+            }
+
+        }
+        return PersonajesExcluido;
+    }
+
+    public static Personaje elegirPersonajeAleatorio(Personaje player) {
         randomPersonaje = new Random();
-        Personaje personajeAleatorio = PersonajesLista.get(randomPersonaje.nextInt(PersonajesLista.size() - 1));
+        List<Personaje> Excluido = excluirPersonaje(player);
+        Personaje personajeAleatorio = Excluido.get(randomPersonaje.nextInt(Excluido.size() - 1));
         return personajeAleatorio;
     }
 
@@ -274,7 +287,7 @@ public class JuegoHP {
     public void JugadorVsBot() {
         JuegoHP.inicioJuegoHP();
         Personaje player0 = JuegoHP.seleccionaPersonaje();
-        Personaje playerAleatorio = JuegoHP.elegirPersonajeAleatorio();
+        Personaje playerAleatorio = JuegoHP.elegirPersonajeAleatorio(player0);
         System.out.println("Tu contrincante es " + playerAleatorio.getNombre());
 
         if (player0 instanceof IHaceMagia && playerAleatorio instanceof IHaceMagia) {
