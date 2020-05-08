@@ -2,10 +2,12 @@ package app.personajes;
 
 import java.util.List;
 
+import app.JuegoHP;
 import app.artefactos.Artefacto;
 import app.interfaces.IHaceMagia;
 import app.poderes.Poder;
 import app.poderes.hechizos.Hechizo;
+import app.poderes.hechizos.ataques.HechizoAtaque;
 
 public class Elfo extends Criatura implements IHaceMagia {
     //Attr
@@ -90,6 +92,19 @@ public class Elfo extends Criatura implements IHaceMagia {
 
     @Override
     public void atacar(Personaje personaje, String hechizo) {
+        for (HechizoAtaque hechizoAtaque : JuegoHP.HechizosAtaque) {
+            if (hechizo.equalsIgnoreCase(hechizoAtaque.nombrePoder)) {
+                atacar(personaje,hechizoAtaque);
+            }
+
+        }
+
+        for (Hechizo HechizosDefensayCur : JuegoHP.HechizosDefensayCuracion) {
+            if (hechizo.equalsIgnoreCase(HechizosDefensayCur.nombrePoder)) {
+                atacar(personaje,HechizosDefensayCur);
+            }
+
+        }
         
 
     }
