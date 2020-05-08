@@ -11,12 +11,12 @@ public class Wizard extends Persona implements IHaceMagia {
 
     private int energiaMagica;
     public List<Hechizo> hechizo;
-    Escoba escoba;
+    public Escoba escoba;
     private Poder poderInicial;
     private Artefacto artefacto;
-    boolean magoOscuro;
+    public boolean magoOscuro;
 
-    public Wizard(String nombre, int salud, int edad, int energiaMagica, boolean magoOscuro,List<Hechizo> hechizo) {
+    public Wizard(String nombre, int salud, int edad, int energiaMagica, boolean magoOscuro,List<Hechizo> hechizo, Escoba escoba) {
         super(nombre, salud, edad);
         this.energiaMagica = energiaMagica;
         this.hechizo = hechizo;
