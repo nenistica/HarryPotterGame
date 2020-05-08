@@ -2,8 +2,6 @@ package app;
 
 import java.util.Scanner;
 
-
-
 public class App {
     public static Scanner Teclado = new Scanner(System.in);
 
@@ -13,14 +11,7 @@ public class App {
 
         JuegoHP mijuegoHp = new JuegoHP();
 
-        
-
-        // Hago for loop para ver los personajes de la lista
-        
-        
         // Attr
-       
-
         int cantJugadores;
 
         System.out.println("¿Cúantos jugadores son? ");
@@ -35,16 +26,9 @@ public class App {
             case 2:
                 mijuegoHp.dosJugadores();
                 break;
-    
-            }
 
-
-               
-           
         }
 
-        
-        
     }
-  
 
+}

@@ -40,7 +40,7 @@ public class JuegoHP {
         harry.setPoderInicial(parsel);
         JuegoHP.PersonajesLista.add(harry);
 
-        Elfo dobby = new Elfo("Dobby", 100, 60, 150,hechizoPersonaje);
+        Elfo dobby = new Elfo("Dobby", 100, 60, 150, hechizoPersonaje);
         dobby.setPoderInicial(metamorfosis);
         JuegoHP.PersonajesLista.add(dobby);
 
@@ -86,7 +86,7 @@ public class JuegoHP {
         snapey.setArtefacto(varEspino);
         JuegoHP.PersonajesLista.add(snapey);
 
-        Elfo kreachy = new Elfo("Kreacher", 50, 666, 150,hechizoPersonaje);
+        Elfo kreachy = new Elfo("Kreacher", 50, 666, 150, hechizoPersonaje);
         kreachy.setPoderInicial(invisibilidad);
         JuegoHP.PersonajesLista.add(kreachy);
 
@@ -121,7 +121,8 @@ public class JuegoHP {
         Reparifors reppi = new Reparifors("Reparifors", "Cura dolencias pequeñas", false, 0, 20, 6);
         JuegoHP.HechizosDefensayCuracion.add(reppi);
 
-        VulneraSanetur vully = new VulneraSanetur("Vulnera Sanetur", "Reduce hemorragia y cierra heridas", false, 0, 30,10);
+        VulneraSanetur vully = new VulneraSanetur("Vulnera Sanetur", "Reduce hemorragia y cierra heridas", false, 0, 30,
+                10);
         JuegoHP.HechizosDefensayCuracion.add(vully);
 
         CaveInimicum cavvy = new CaveInimicum("Cave Inimicum", "Proteccion aleja enemigos", false, 30, 20, 30);
@@ -192,7 +193,7 @@ public class JuegoHP {
 
         }
 
-        for (Hechizo HechizosDefensayCur: JuegoHP.HechizosDefensayCuracion) {
+        for (Hechizo HechizosDefensayCur : JuegoHP.HechizosDefensayCuracion) {
             if (nombreH.equalsIgnoreCase(HechizosDefensayCur.nombrePoder)) {
                 return HechizosDefensayCur;
             }
@@ -211,7 +212,7 @@ public class JuegoHP {
     }
 
     public static void listaHechizosDefensa() {
-        System.out.println("LISTA HECHIZOS DE DEFENSA Y CURACION");
+        System.out.println("LISTA HECHIZOS DE DEFENSA Y CURACIÓN");
         for (int i = 0; i < JuegoHP.HechizosDefensayCuracion.size(); i++) {
             Hechizo h = JuegoHP.HechizosDefensayCuracion.get(i);
             System.out.println(h.nombrePoder);
@@ -239,7 +240,8 @@ public class JuegoHP {
 
     public static Hechizo elegirHechizosDefensayCuracionAleatorio() {
         randomDefensa = new Random();
-        Hechizo HechizosDefensayCuracionAleatorio = HechizosDefensayCuracion.get(randomDefensa.nextInt(HechizosDefensayCuracion.size() - 1));
+        Hechizo HechizosDefensayCuracionAleatorio = HechizosDefensayCuracion
+                .get(randomDefensa.nextInt(HechizosDefensayCuracion.size() - 1));
         return HechizosDefensayCuracionAleatorio;
     }
 
@@ -266,7 +268,7 @@ public class JuegoHP {
         JuegoHP.inicioJuegoHP();
         Personaje player0 = JuegoHP.seleccionaPersonaje();
         Personaje playerAleatorio = JuegoHP.elegirPersonajeAleatorio();
-        System.out.println("Tu contrincante es "+playerAleatorio.getNombre());
+        System.out.println("Tu contrincante es " + playerAleatorio.getNombre());
 
         if (player0 instanceof IHaceMagia && playerAleatorio instanceof IHaceMagia) {
 
@@ -279,18 +281,21 @@ public class JuegoHP {
                         Hechizo hechizo1 = JuegoHP.elegirHechizo();
                         ((IHaceMagia) player0).aprender(hechizo1);
                         ((IHaceMagia) player0).atacar(playerAleatorio, hechizo1);
-                        System.out.println("\nLa salud de " + playerAleatorio.getNombre() + " es: " + playerAleatorio.getSalud());
+                        System.out.println(
+                                "\nLa salud de " + playerAleatorio.getNombre() + " es: " + playerAleatorio.getSalud());
                         System.out.println("La salud de " + player0.getNombre() + " es: " + player0.getSalud());
 
                     } else {
                         System.out.println("\nTurno de Ataque para el jugador " + playerAleatorio.getNombre());
                         JuegoHP.listaHechizosAtaques();
                         Hechizo hechizo2 = JuegoHP.elegirHechizoAtaqueAleatorio();
-                        System.out.println(playerAleatorio.getNombre()+" te ha atacado con el hechizo: "+hechizo2.nombrePoder);
+                        System.out.println(
+                                playerAleatorio.getNombre() + " te ha atacado con el hechizo: " + hechizo2.nombrePoder);
                         ((IHaceMagia) playerAleatorio).atacar(player0, hechizo2);
                         ((IHaceMagia) playerAleatorio).aprender(hechizo2);
                         System.out.println("\nLa salud de " + player0.getNombre() + " es: " + player0.getSalud());
-                        System.out.println("La salud de " + playerAleatorio.getNombre() + " es: " + playerAleatorio.getSalud());
+                        System.out.println(
+                                "La salud de " + playerAleatorio.getNombre() + " es: " + playerAleatorio.getSalud());
                     }
 
                     turnoP1 = !turnoP1;
@@ -310,11 +315,13 @@ public class JuegoHP {
                         System.out.println("\nTurno de Defensa para el jugador: " + playerAleatorio.getNombre());
                         JuegoHP.listaHechizosDefensa();
                         Hechizo hechizo2 = JuegoHP.elegirHechizosDefensayCuracionAleatorio();
-                        System.out.println(playerAleatorio.getNombre()+" se ha defendido con el hechizo: "+hechizo2.nombrePoder);
+                        System.out.println(playerAleatorio.getNombre() + " se ha defendido con el hechizo: "
+                                + hechizo2.nombrePoder);
                         ((IHaceMagia) playerAleatorio).atacar(player0, hechizo2);
                         ((IHaceMagia) playerAleatorio).aprender(hechizo2);
                         System.out.println("\nLa salud de " + player0.getNombre() + " es: " + player0.getSalud());
-                        System.out.println("La salud de " + playerAleatorio.getNombre() + " es: " + playerAleatorio.getSalud());
+                        System.out.println(
+                                "La salud de " + playerAleatorio.getNombre() + " es: " + playerAleatorio.getSalud());
                     }
 
                 }
@@ -327,69 +334,64 @@ public class JuegoHP {
         JuegoHP.gameOver(player0, playerAleatorio);
     }
 
-    public void dosJugadores(){
+    public void dosJugadores() {
         JuegoHP.inicioJuegoHP();
-                Personaje player1 = JuegoHP.seleccionaPersonaje();
-                Personaje player2 = JuegoHP.seleccionaPersonaje();
-                if (player1 instanceof IHaceMagia && player2 instanceof IHaceMagia) {
+        Personaje player1 = JuegoHP.seleccionaPersonaje();
+        Personaje player2 = JuegoHP.seleccionaPersonaje();
+        if (player1 instanceof IHaceMagia && player2 instanceof IHaceMagia) {
 
-                    while (player1.estaVivo() && player2.estaVivo()) {
-                        if (turnoAtacar) {
+            while (player1.estaVivo() && player2.estaVivo()) {
+                if (turnoAtacar) {
 
-                            if (turnoP1) {
-                                System.out.println("\nTurno de Ataque para el jugador " + player1.getNombre());
-                                JuegoHP.listaHechizosAtaques();
-                                Hechizo hechizo1 = JuegoHP.elegirHechizo();
-                                ((IHaceMagia) player1).aprender(hechizo1);
-                                ((IHaceMagia) player1).atacar(player2, hechizo1);
-                                System.out
-                                        .println("\nLa salud de " + player2.getNombre() + " es: " + player2.getSalud());
-                                System.out.println("La salud de " + player1.getNombre() + " es: " + player1.getSalud());
+                    if (turnoP1) {
+                        System.out.println("\nTurno de Ataque para el jugador " + player1.getNombre());
+                        JuegoHP.listaHechizosAtaques();
+                        Hechizo hechizo1 = JuegoHP.elegirHechizo();
+                        ((IHaceMagia) player1).aprender(hechizo1);
+                        ((IHaceMagia) player1).atacar(player2, hechizo1);
+                        System.out.println("\nLa salud de " + player2.getNombre() + " es: " + player2.getSalud());
+                        System.out.println("La salud de " + player1.getNombre() + " es: " + player1.getSalud());
 
-                            } else {
-                                System.out.println("\nTurno de Ataque para el jugador " + player2.getNombre());
-                                JuegoHP.listaHechizosAtaques();
-                                Hechizo hechizo2 = JuegoHP.elegirHechizo();
-                                ((IHaceMagia) player2).atacar(player1, hechizo2);
-                                ((IHaceMagia) player2).aprender(hechizo2);
-                                System.out
-                                        .println("\nLa salud de " + player1.getNombre() + " es: " + player1.getSalud());
-                                System.out.println("La salud de " + player2.getNombre() + " es: " + player2.getSalud());
-                            }
-
-                            turnoP1 = !turnoP1;
-
-                        } else {
-
-                            if (turnoP1) {
-                                System.out.println("\nTurno de Defensa para el jugador: " + player1.getNombre());
-                                JuegoHP.listaHechizosDefensa();
-                                Hechizo hechizo1 = JuegoHP.elegirHechizo();
-                                ((IHaceMagia) player1).atacar(player2, hechizo1);
-                                System.out
-                                        .println("\nLa salud de " + player2.getNombre() + " es: " + player2.getSalud());
-                                System.out.println("La salud de " + player1.getNombre() + " es: " + player1.getSalud());
-
-                            } else {
-                                System.out.println("\nTurno de Defensa para el jugador: " + player2.getNombre());
-                                JuegoHP.listaHechizosDefensa();
-                                Hechizo hechizo2 = JuegoHP.elegirHechizo();
-                                ((IHaceMagia) player2).atacar(player1, hechizo2);
-                                ((IHaceMagia) player2).aprender(hechizo2);
-                                System.out
-                                        .println("\nLa salud de " + player1.getNombre() + " es: " + player1.getSalud());
-                                System.out.println("La salud de " + player2.getNombre() + " es: " + player2.getSalud());
-                            }
-
-                        }
-
-                        turnoAtacar = !turnoAtacar;
-
+                    } else {
+                        System.out.println("\nTurno de Ataque para el jugador " + player2.getNombre());
+                        JuegoHP.listaHechizosAtaques();
+                        Hechizo hechizo2 = JuegoHP.elegirHechizo();
+                        ((IHaceMagia) player2).atacar(player1, hechizo2);
+                        ((IHaceMagia) player2).aprender(hechizo2);
+                        System.out.println("\nLa salud de " + player1.getNombre() + " es: " + player1.getSalud());
+                        System.out.println("La salud de " + player2.getNombre() + " es: " + player2.getSalud());
                     }
-                    
-            
+
+                    turnoP1 = !turnoP1;
+
+                } else {
+
+                    if (turnoP1) {
+                        System.out.println("\nTurno de Defensa para el jugador: " + player1.getNombre());
+                        JuegoHP.listaHechizosDefensa();
+                        Hechizo hechizo1 = JuegoHP.elegirHechizo();
+                        ((IHaceMagia) player1).atacar(player2, hechizo1);
+                        System.out.println("\nLa salud de " + player2.getNombre() + " es: " + player2.getSalud());
+                        System.out.println("La salud de " + player1.getNombre() + " es: " + player1.getSalud());
+
+                    } else {
+                        System.out.println("\nTurno de Defensa para el jugador: " + player2.getNombre());
+                        JuegoHP.listaHechizosDefensa();
+                        Hechizo hechizo2 = JuegoHP.elegirHechizo();
+                        ((IHaceMagia) player2).atacar(player1, hechizo2);
+                        ((IHaceMagia) player2).aprender(hechizo2);
+                        System.out.println("\nLa salud de " + player1.getNombre() + " es: " + player1.getSalud());
+                        System.out.println("La salud de " + player2.getNombre() + " es: " + player2.getSalud());
+                    }
+
                 }
-                JuegoHP.gameOver(player1, player2);
+
+                turnoAtacar = !turnoAtacar;
+
+            }
+
+        }
+        JuegoHP.gameOver(player1, player2);
     }
 
 }
