@@ -1,10 +1,13 @@
 package app.personajes;
 
 import java.util.List;
+
+import app.JuegoHP;
 import app.artefactos.Artefacto;
 import app.interfaces.IHaceMagia;
 import app.poderes.Poder;
 import app.poderes.hechizos.Hechizo;
+import app.poderes.hechizos.ataques.HechizoAtaque;
 import app.transportes.Escoba;
 
 public class Wizard extends Persona implements IHaceMagia {
@@ -16,7 +19,8 @@ public class Wizard extends Persona implements IHaceMagia {
     private Artefacto artefacto;
     public boolean magoOscuro;
 
-    public Wizard(String nombre, int salud, int edad, int energiaMagica, boolean magoOscuro,List<Hechizo> hechizo, Escoba escoba) {
+    public Wizard(String nombre, int salud, int edad, int energiaMagica, boolean magoOscuro, List<Hechizo> hechizo,
+            Escoba escoba) {
         super(nombre, salud, edad);
         this.energiaMagica = energiaMagica;
         this.hechizo = hechizo;
@@ -43,6 +47,19 @@ public class Wizard extends Persona implements IHaceMagia {
 
     @Override
     public void atacar(Personaje personaje, String hechizo) {
+        for (HechizoAtaque hechizoAtaque : JuegoHP.HechizosAtaque) {
+            if (hechizo.equalsIgnoreCase(hechizoAtaque.nombrePoder)) {
+                atacar(personaje,hechizoAtaque);
+            }
+
+        }
+
+        for (Hechizo HechizosDefensayCur : JuegoHP.HechizosDefensayCuracion) {
+            if (hechizo.equalsIgnoreCase(HechizosDefensayCur.nombrePoder)) {
+                atacar(personaje,HechizosDefensayCur);
+            }
+
+        }
 
     }
 
