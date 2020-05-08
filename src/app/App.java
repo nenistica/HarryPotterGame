@@ -23,7 +23,7 @@ public class App {
 
         int cantJugadores;
 
-        System.out.println("¿Cúantos jugadores son: ");
+        System.out.println("¿Cúantos jugadores son? ");
 
         cantJugadores = Teclado.nextInt();
 

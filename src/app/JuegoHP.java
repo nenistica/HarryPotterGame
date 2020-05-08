@@ -16,8 +16,7 @@ public class JuegoHP {
 
     public static List<Personaje> PersonajesLista = new ArrayList<Personaje>();
     public static List<HechizoAtaque> HechizosAtaque = new ArrayList<HechizoAtaque>();
-    public static List<HechizoDefensa> HechizosDefensa = new ArrayList<HechizoDefensa>();
-    public static List<HechizoCuracion> HechizosCuracion = new ArrayList<HechizoCuracion>();
+    public static List<Hechizo> HechizosDefensayCuracion = new ArrayList<Hechizo>();
     public static List<HechizoOcio> HechizosOcio = new ArrayList<HechizoOcio>();
     public static List<Hechizo> hechizoPersonaje = new ArrayList<Hechizo>();
 
@@ -101,42 +100,41 @@ public class JuegoHP {
     // Hechizos
     public static void agregarHechizos() {
 
-        AvadaKedavra avvy = new AvadaKedavra("Avada Kedavra", "Maldición de Muerte Total", true, 100, 0, 50);
+        AvadaKedavra avvy = new AvadaKedavra("Avada Kedavra", "Maldición de Muerte Total", true, 100, 0, 40);
         JuegoHP.HechizosAtaque.add(avvy);
 
-        Cruciatus cruccy = new Cruciatus("Cruciatus", "Maldición de Tortura Física", true, 15, 0, 30);
+        Cruciatus cruccy = new Cruciatus("Cruciatus", "Maldición de Tortura Física", true, 15, 0, 20);
         JuegoHP.HechizosAtaque.add(cruccy);
 
-        Imperius imppy = new Imperius("Imperius", "Controlar a la victima", true, 30, 0, 20);
+        Imperius imppy = new Imperius("Imperius", "Controlar a la victima", true, 30, 0, 10);
         JuegoHP.HechizosAtaque.add(imppy);
 
-        PetrificusTotalus petri = new PetrificusTotalus("Petrificus Totalus", "Parálisis de cuerpo", false, 20, 0, 10);
+        PetrificusTotalus petri = new PetrificusTotalus("Petrificus Totalus", "Parálisis de cuerpo", false, 20, 0, 5);
         JuegoHP.HechizosAtaque.add(petri);
 
-        SectumSempra sectty = new SectumSempra("Sectum Sempra", "Profundos cortes a la victima", false, 25, 0, 15);
+        SectumSempra sectty = new SectumSempra("Sectum Sempra", "Profundos cortes a la victima", false, 25, 0, 6);
         JuegoHP.HechizosAtaque.add(sectty);
 
-        Episkey eppi = new Episkey("Episkey", "Cura Heridas", false, 0, 12, 8);
-        JuegoHP.HechizosCuracion.add(eppi);
+        Episkey eppi = new Episkey("Episkey", "Cura Heridas", false, 0, 12, 2);
+        JuegoHP.HechizosDefensayCuracion.add(eppi);
 
-        Reparifors reppi = new Reparifors("Reparifors", "Cura dolencias pequeñas", false, 0, 20, 12);
-        JuegoHP.HechizosCuracion.add(reppi);
+        Reparifors reppi = new Reparifors("Reparifors", "Cura dolencias pequeñas", false, 0, 20, 6);
+        JuegoHP.HechizosDefensayCuracion.add(reppi);
 
-        VulneraSanetur vully = new VulneraSanetur("Vulnera Sanetur", "Reduce hemorragia y cierra heridas", false, 0, 30,
-                20);
-        JuegoHP.HechizosCuracion.add(vully);
+        VulneraSanetur vully = new VulneraSanetur("Vulnera Sanetur", "Reduce hemorragia y cierra heridas", false, 0, 30,10);
+        JuegoHP.HechizosDefensayCuracion.add(vully);
 
-        CaveInimicum cavvy = new CaveInimicum("Cave Inimicum", "Proteccion aleja enemigos", false, 30, 20, 40);
-        JuegoHP.HechizosDefensa.add(cavvy);
+        CaveInimicum cavvy = new CaveInimicum("Cave Inimicum", "Proteccion aleja enemigos", false, 30, 20, 30);
+        JuegoHP.HechizosDefensayCuracion.add(cavvy);
 
-        ExpectoPatronum exppy = new ExpectoPatronum("Expecto Patronum", "Repele Dementores", false, 25, 15, 30);
-        JuegoHP.HechizosDefensa.add(exppy);
+        ExpectoPatronum exppy = new ExpectoPatronum("Expecto Patronum", "Repele Dementores", false, 25, 15, 20);
+        JuegoHP.HechizosDefensayCuracion.add(exppy);
 
-        Expelliarmus expelly = new Expelliarmus("Expelliarmus", "Desarma al oponente", false, 10, 0, 5);
-        JuegoHP.HechizosDefensa.add(expelly);
+        Expelliarmus expelly = new Expelliarmus("Expelliarmus", "Desarma al oponente", false, 10, 0, 1);
+        JuegoHP.HechizosDefensayCuracion.add(expelly);
 
-        ProtegoMaxima protty = new ProtegoMaxima("Protego Maxima", "Crea una barrera protectora", false, 15, 20, 15);
-        JuegoHP.HechizosDefensa.add(protty);
+        ProtegoMaxima protty = new ProtegoMaxima("Protego Maxima", "Crea una barrera protectora", false, 15, 20, 10);
+        JuegoHP.HechizosDefensayCuracion.add(protty);
 
         Alohomora aloho = new Alohomora("Alohomora", "Abre puertas con cerraduras", false, 0, 0, 7);
         JuegoHP.HechizosOcio.add(aloho);
@@ -194,9 +192,9 @@ public class JuegoHP {
 
         }
 
-        for (HechizoDefensa hechizoDefensa : JuegoHP.HechizosDefensa) {
-            if (nombreH.equalsIgnoreCase(hechizoDefensa.nombrePoder)) {
-                return hechizoDefensa;
+        for (Hechizo HechizosDefensayCur: JuegoHP.HechizosDefensayCuracion) {
+            if (nombreH.equalsIgnoreCase(HechizosDefensayCur.nombrePoder)) {
+                return HechizosDefensayCur;
             }
 
         }
@@ -213,9 +211,9 @@ public class JuegoHP {
     }
 
     public static void listaHechizosDefensa() {
-        System.out.println("LISTA HECHIZOS DE DEFENSA");
-        for (int i = 0; i < JuegoHP.HechizosDefensa.size(); i++) {
-            Hechizo h = JuegoHP.HechizosDefensa.get(i);
+        System.out.println("LISTA HECHIZOS DE DEFENSA Y CURACION");
+        for (int i = 0; i < JuegoHP.HechizosDefensayCuracion.size(); i++) {
+            Hechizo h = JuegoHP.HechizosDefensayCuracion.get(i);
             System.out.println(h.nombrePoder);
         }
 
@@ -239,10 +237,10 @@ public class JuegoHP {
 
     public static Random randomDefensa; // Personaje BOT
 
-    public static HechizoDefensa elegirHechizoDefensaAleatorio() {
+    public static Hechizo elegirHechizosDefensayCuracionAleatorio() {
         randomDefensa = new Random();
-        HechizoDefensa hechizoDefensaAleatorio = HechizosDefensa.get(randomDefensa.nextInt(HechizosDefensa.size() - 1));
-        return hechizoDefensaAleatorio;
+        Hechizo HechizosDefensayCuracionAleatorio = HechizosDefensayCuracion.get(randomDefensa.nextInt(HechizosDefensayCuracion.size() - 1));
+        return HechizosDefensayCuracionAleatorio;
     }
 
     public static void gameOver(Personaje player1, Personaje player2) {
@@ -311,7 +309,7 @@ public class JuegoHP {
                     } else {
                         System.out.println("\nTurno de Defensa para el jugador: " + playerAleatorio.getNombre());
                         JuegoHP.listaHechizosDefensa();
-                        Hechizo hechizo2 = JuegoHP.elegirHechizoDefensaAleatorio();
+                        Hechizo hechizo2 = JuegoHP.elegirHechizosDefensayCuracionAleatorio();
                         System.out.println(playerAleatorio.getNombre()+" se ha defendido con el hechizo: "+hechizo2.nombrePoder);
                         ((IHaceMagia) playerAleatorio).atacar(player0, hechizo2);
                         ((IHaceMagia) playerAleatorio).aprender(hechizo2);
