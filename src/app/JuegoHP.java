@@ -270,10 +270,10 @@ public class JuegoHP {
 
     public static void gameOver(Personaje player1, Personaje player2) {
         if (player1.estaVivo()) {
-            System.out.println("El ganador es: " + player1.getNombre());
+            System.out.println("\nEl ganador es: " + player1.getNombre());
             System.out.println(player2.getNombre() + " ha muerto.\n");
         } else {
-            System.out.println("El ganador es: " + player2.getNombre());
+            System.out.println("\nEl ganador es: " + player2.getNombre());
             System.out.println(player1.getNombre() + " ha muerto.\n");
         }
 

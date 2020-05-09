@@ -103,7 +103,11 @@ public class Wizard extends Persona implements IHaceMagia {
                 } else{
                     saludVictima -= (2*(hechizo.nivelDanio)*(1+this.artefacto.amplificadorDeDanio));
                 }
-                personaje.setSalud((int) saludVictima);
+                if (saludVictima >= 0){
+                    personaje.setSalud((int) saludVictima);
+                } else{
+                    personaje.setSalud(0);
+                }
                 double saludAtacante = (double) this.getSalud();
                 saludAtacante += (2*(hechizo.nivelCuracion)*(1+this.artefacto.amplificadorDeCuracion));
                 if (saludAtacante <= 100) {
@@ -122,7 +126,11 @@ public class Wizard extends Persona implements IHaceMagia {
                 } else{
                     saludVictima -= (hechizo.nivelDanio)*(1+this.artefacto.amplificadorDeDanio);
                 }
-                personaje.setSalud((int) saludVictima);
+                if (saludVictima >= 0){
+                    personaje.setSalud((int) saludVictima);
+                } else{
+                    personaje.setSalud(0);
+                }
                 double saludAtacante = (double) this.getSalud();
                 saludAtacante += (hechizo.nivelCuracion)*(1+this.artefacto.amplificadorDeCuracion);
                 this.setSalud((int) saludAtacante);
