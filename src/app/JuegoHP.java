@@ -181,6 +181,19 @@ public class JuegoHP {
         JuegoHP.agregarHechizos();
     }
 
+
+    public static void mostrarEscobas(Personaje player1,Personaje player2){
+            if(player1 instanceof Wizard){
+                Escoba escobaPlayer1 = ((Wizard) player1).getEscoba();
+                System.out.println( player1.getNombre() +" llega al duelo mágico en la " + escobaPlayer1.nombreDeTransporte);
+            }
+            if(player2 instanceof Wizard){
+                Escoba escobaPlayer2 = ((Wizard) player2).getEscoba();
+                System.out.println( player2.getNombre() +" llega al duelo mágico en la " + escobaPlayer2.nombreDeTransporte);
+            }
+
+    }
+
     public static Personaje getPersonajeByName(String nombre) {
         for (Personaje personaje : PersonajesLista) {
             if (nombre.equalsIgnoreCase(personaje.getNombre())) {
@@ -304,7 +317,9 @@ public class JuegoHP {
         JuegoHP.inicioJuegoHP();
         Personaje player0 = JuegoHP.seleccionaPersonaje();
         Personaje playerAleatorio = JuegoHP.elegirPersonajeAleatorio(player0);
-        System.out.println("Tu contrincante es " + playerAleatorio.getNombre());
+        System.out.println("Tu contrincante es " + playerAleatorio.getNombre()+"\n");
+
+        JuegoHP.mostrarEscobas(player0,playerAleatorio);
 
         if (player0 instanceof IHaceMagia && playerAleatorio instanceof IHaceMagia) {
 
@@ -397,11 +412,11 @@ public class JuegoHP {
         JuegoHP.inicioJuegoHP();
         Personaje player1 = JuegoHP.seleccionaPersonaje();
         Personaje player2 = JuegoHP.seleccionaPersonaje();
-        System.out.println("");
+        System.out.println("\n");
+        JuegoHP.mostrarEscobas(player1,player2);
         if (player1 instanceof IHaceMagia && player2 instanceof IHaceMagia) {
             
-            //Escoba escobaPlayer1 = ((Wizard) player1).getEscoba();
-            //System.out.println( player1.getNombre() +" llega al duelo mágico en la " + escobaPlayer1.nombreDeTransporte);
+    
 
             while (player1.estaVivo() && player2.estaVivo()) {
                 if (turnoAtacar) {
