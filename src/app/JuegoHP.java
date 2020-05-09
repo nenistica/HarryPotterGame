@@ -24,7 +24,6 @@ public class JuegoHP {
     public static List<HechizoAtaque> HechizosAtaque = new ArrayList<HechizoAtaque>();
     public static List<Hechizo> HechizosDefensayCuracion = new ArrayList<Hechizo>();
     public static List<HechizoOcio> HechizosOcio = new ArrayList<HechizoOcio>();
-    public static List<Hechizo> hechizoPersonaje = new ArrayList<Hechizo>();
     public static List<Personaje> PersonajesExcluido = new ArrayList<Personaje>();
 
        
@@ -43,50 +42,64 @@ public class JuegoHP {
         Artefacto varSauco = new Varita("Varita de Sauco", 1, 0.5, hechizo);
         Artefacto horrocruxy = new Horrocrux("Horrocrux", 0.9, 0, hechizo);
         
-        Escoba nimbus3000 = new Escoba("Nimbus3000");
-        Escoba saetaDeFuego = new Escoba("SaetaDeFuego");
-        Escoba barredora11 = new Escoba("Barredora11");
-        Escoba cometa140 = new Escoba("Cometa140");
+        Escoba nimbus3000 = new Escoba("Nimbus 3000");
+        Escoba saetaDeFuego = new Escoba("Saeta De Fuego");
+        Escoba barredora11 = new Escoba("Barredora 11");
+        Escoba cometa140 = new Escoba("Cometa 140");
 
-        Wizard harry = new Wizard("Harry Potter", 100, 17, 150, false, hechizoPersonaje, saetaDeFuego);
+        //Personajes
+        List<Hechizo> listaHarry = new ArrayList<Hechizo>();
+        List<Hechizo> listaDobby = new ArrayList<Hechizo>();
+        List<Hechizo> listaHermione = new ArrayList<Hechizo>();
+        List<Hechizo> listaRon = new ArrayList<Hechizo>();
+        List<Hechizo> listaDraco = new ArrayList<Hechizo>();
+        List<Hechizo> listaLuna = new ArrayList<Hechizo>();
+        List<Hechizo> listaNewt = new ArrayList<Hechizo>();
+        List<Hechizo> listaVoldy = new ArrayList<Hechizo>();
+        List<Hechizo> listaDumby = new ArrayList<Hechizo>();
+        List<Hechizo> listaSnapy = new ArrayList<Hechizo>();
+        List<Hechizo> listaKreachy = new ArrayList<Hechizo>();
+        List<Hechizo> listaBella = new ArrayList<Hechizo>();
+
+        Wizard harry = new Wizard("Harry Potter", 100, 17, 150, false, listaHarry, saetaDeFuego);
         harry.setArtefacto(capaInvisible);
         harry.setPoderInicial(parsel);
         JuegoHP.PersonajesLista.add(harry);
 
-        Elfo dobby = new Elfo("Dobby", 100, 60, 150, hechizoPersonaje);
+        Elfo dobby = new Elfo("Dobby", 100, 60, 150, listaDobby);
         dobby.setPoderInicial(metamorfosis);
         JuegoHP.PersonajesLista.add(dobby);
 
-        Wizard hermy = new Wizard("Hermione Granger", 100, 17, 150, false, hechizoPersonaje, cometa140);
+        Wizard hermy = new Wizard("Hermione Granger", 100, 17, 150, false, listaHermione, cometa140);
         hermy.setPoderInicial(parsel);
         hermy.setArtefacto(giratiempo);
         JuegoHP.PersonajesLista.add(hermy);
 
-        Wizard ron = new Wizard("Ron Weasley", 100, 17, 150, false, hechizoPersonaje, barredora11);
+        Wizard ron = new Wizard("Ron Weasley", 100, 17, 150, false, listaRon, barredora11);
         ron.setArtefacto(varFresno);
         JuegoHP.PersonajesLista.add(ron);
 
-        Wizard draquito = new Wizard("Draco Malfoy", 100, 17, 150, true, hechizoPersonaje, cometa140);
+        Wizard draquito = new Wizard("Draco Malfoy", 100, 17, 150, true, listaDraco, cometa140);
         draquito.setPoderInicial(hechizo);
         draquito.setArtefacto(varEspino);
         JuegoHP.PersonajesLista.add(draquito);
 
-        Wizard lunita = new Wizard("Luna Lovegood", 100, 16, 150, false, hechizoPersonaje, nimbus3000);
+        Wizard lunita = new Wizard("Luna Lovegood", 100, 16, 150, false, listaLuna, nimbus3000);
         lunita.setPoderInicial(hechizo);
         lunita.setArtefacto(varFresno);
         JuegoHP.PersonajesLista.add(lunita);
 
-        Wizard newtty = new Wizard("Newt Scamander", 100, 25, 150, false, hechizoPersonaje, nimbus3000);
+        Wizard newtty = new Wizard("Newt Scamander", 100, 25, 150, false, listaNewt, nimbus3000);
         newtty.setPoderInicial(hechizo);
         newtty.setArtefacto(varFresno);
         JuegoHP.PersonajesLista.add(newtty);
 
-        Wizard voldy = new Wizard("Lord Voldemort", 100, 71, 150, true, hechizoPersonaje,saetaDeFuego );
+        Wizard voldy = new Wizard("Lord Voldemort", 100, 71, 150, true, listaVoldy ,saetaDeFuego );
         voldy.setPoderInicial(parsel);
         voldy.setArtefacto(horrocruxy);
         JuegoHP.PersonajesLista.add(voldy);
 
-        Wizard dumby = new Wizard("Albus Dumbledore", 75, 116, 150, false, hechizoPersonaje, cometa140 );
+        Wizard dumby = new Wizard("Albus Dumbledore", 75, 116, 150, false, listaDumby, cometa140 );
         dumby.setPoderInicial(hechizo);
         dumby.setArtefacto(varSauco);
         JuegoHP.PersonajesLista.add(dumby);
@@ -94,16 +107,16 @@ public class JuegoHP {
         Muggle dudley = new Muggle("Dudley Dursley", 80, 18);
         JuegoHP.PersonajesLista.add(dudley);
 
-        Wizard snapey = new Wizard("Severus Snape", 90, 38, 150, true, hechizoPersonaje, barredora11);
+        Wizard snapey = new Wizard("Severus Snape", 90, 38, 150, true, listaSnapy, barredora11);
         snapey.setPoderInicial(hechizo);
         snapey.setArtefacto(varEspino);
         JuegoHP.PersonajesLista.add(snapey);
 
-        Elfo kreachy = new Elfo("Kreacher", 50, 666, 150, hechizoPersonaje);
+        Elfo kreachy = new Elfo("Kreacher", 50, 666, 150, listaKreachy);
         kreachy.setPoderInicial(invisibilidad);
         JuegoHP.PersonajesLista.add(kreachy);
 
-        Wizard bella = new Wizard("Bellatrix Lestrange", 100, 47, 150, true, hechizoPersonaje, nimbus3000);
+        Wizard bella = new Wizard("Bellatrix Lestrange", 100, 47, 150, true, listaBella, nimbus3000);
         bella.setPoderInicial(hechizo);
         bella.setArtefacto(varEspino);
         JuegoHP.PersonajesLista.add(bella);
@@ -185,7 +198,7 @@ public class JuegoHP {
         Opcion = Teclado.nextLine();
         return getPersonajeByName(Opcion);
 
-    }
+    }   
 
     public static void mostrarListaPersonajes() {
         System.out.println("LISTA DE PERSONAJES");
@@ -382,7 +395,11 @@ public class JuegoHP {
         JuegoHP.inicioJuegoHP();
         Personaje player1 = JuegoHP.seleccionaPersonaje();
         Personaje player2 = JuegoHP.seleccionaPersonaje();
+        System.out.println("");
         if (player1 instanceof IHaceMagia && player2 instanceof IHaceMagia) {
+            
+            //Escoba escobaPlayer1 = ((Wizard) player1).getEscoba();
+            //System.out.println( player1.getNombre() +" llega al duelo mágico en la " + escobaPlayer1.nombreDeTransporte);
 
             while (player1.estaVivo() && player2.estaVivo()) {
                 if (turnoAtacar) {

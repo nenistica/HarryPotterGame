@@ -14,7 +14,7 @@ public class Wizard extends Persona implements IHaceMagia {
 
     private int energiaMagica;
     public List<Hechizo> hechizo;
-    public Escoba escoba;
+    private Escoba escoba;
     private Poder poderInicial;
     private Artefacto artefacto;
     public boolean magoOscuro;
@@ -26,6 +26,10 @@ public class Wizard extends Persona implements IHaceMagia {
         this.hechizo = hechizo;
         this.magoOscuro = magoOscuro;
         this.escoba = escoba;
+    }
+
+    public Escoba getEscoba(){
+        return escoba;
     }
 
     @Override
@@ -87,7 +91,7 @@ public class Wizard extends Persona implements IHaceMagia {
     @Override
     public void atacar(Personaje personaje, Hechizo hechizo) {
         // buscar el nivelDanio de hechizo y se lo resta a la salud de personaje
-        if (this.getEnergiaMagica() >= hechizo.energiaMagicaHechizo) { //DA ERROR NULL
+        if (this.getEnergiaMagica() >= hechizo.energiaMagicaHechizo) { 
             
             int energiaMagicaPlayer = this.getEnergiaMagica();
             energiaMagicaPlayer -= hechizo.energiaMagicaHechizo;
