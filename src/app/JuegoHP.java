@@ -406,9 +406,37 @@ public class JuegoHP {
                 turnoAtacar = !turnoAtacar;
 
             }
+          
+        }
+        if (!(player1 instanceof IHaceMagia) || !(player2 instanceof IHaceMagia)) {
+            while (player1.estaVivo() && player2.estaVivo()) {
+                if (player1 instanceof IHaceMagia) {
+                    System.out.println(ANSI_RED + "\nTurno de Ataque para el jugador: " + ANSI_RESET + player1.getNombre() + ANSI_RED);
+                    JuegoHP.listaHechizosAtaques();
+                    Hechizo hechizo1 = JuegoHP.elegirHechizo();
+                    ((IHaceMagia) player1).aprender(hechizo1);
+                    ((IHaceMagia) player1).atacar(player2, hechizo1);
+                    System.out.println("\nLa salud de " + player2.getNombre() + " es: " + player2.getSalud());
+                    System.out.println("La salud de " + player1.getNombre() + " es: " + player1.getSalud());
+                    System.out.println("¡" + player2.getNombre() + "es un muggle y no puede realizar hechizos!");
+                    
+                }else{
+                    System.out.println(ANSI_RED + "\nTurno de Ataque para el jugador:" + ANSI_RESET + player2.getNombre()+ ANSI_RED);
+                    JuegoHP.listaHechizosAtaques();
+                    Hechizo hechizo2 = JuegoHP.elegirHechizo();
+                    ((IHaceMagia) player2).atacar(player1, hechizo2);
+                    ((IHaceMagia) player2).aprender(hechizo2);
+                    System.out.println("\nLa salud de " + player1.getNombre() + " es: " + player1.getSalud()+ ANSI_RESET);
+                    System.out.println("La salud de " + player2.getNombre() + " es: " + player2.getSalud()+ ANSI_RESET); 
+                    System.out.println("¡" + player1.getNombre() + " es un muggle y no puede realizar hechizos!");
+                }
+                
+            }
 
         }
+
         JuegoHP.gameOver(player1, player2);
+
     }
 
 }
