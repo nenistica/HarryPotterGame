@@ -348,7 +348,34 @@ public class JuegoHP {
             }
 
         }
+        
+        if (!(player0 instanceof IHaceMagia) || !(playerAleatorio instanceof IHaceMagia)) {
+            while (player0.estaVivo() && playerAleatorio.estaVivo()) {
+                if (player0 instanceof IHaceMagia) {
+                    System.out.println(ANSI_RED + "\nTurno de Ataque para el jugador: " + ANSI_RESET + player0.getNombre() + ANSI_RED);
+                    JuegoHP.listaHechizosAtaques();
+                    Hechizo hechizo1 = JuegoHP.elegirHechizo();
+                    ((IHaceMagia) player0).aprender(hechizo1);
+                    ((IHaceMagia) player0).atacar(playerAleatorio, hechizo1);
+                    System.out.println("\nLa salud de " + playerAleatorio.getNombre() + " es: " + playerAleatorio.getSalud());
+                    System.out.println("La salud de " + player0.getNombre() + " es: " + player0.getSalud());
+                    System.out.println("¡" + playerAleatorio.getNombre() + "es un muggle y no puede realizar hechizos!");
+                    
+                }else{
+                    System.out.println(ANSI_RED + "\nTurno de Ataque para el jugador:" + ANSI_RESET + playerAleatorio.getNombre()+ ANSI_RED);
+                    JuegoHP.listaHechizosAtaques();
+                    Hechizo hechizo2 = JuegoHP.elegirHechizo();
+                    ((IHaceMagia) playerAleatorio).atacar(player0, hechizo2);
+                    ((IHaceMagia) playerAleatorio).aprender(hechizo2);
+                    System.out.println("\nLa salud de " + player0.getNombre() + " es: " + player0.getSalud()+ ANSI_RESET);
+                    System.out.println("La salud de " + playerAleatorio.getNombre() + " es: " + playerAleatorio.getSalud()+ ANSI_RESET); 
+                    System.out.println("¡" + player0.getNombre() + " es un muggle y no puede realizar hechizos!");
+                }
+                
+            }
+
         JuegoHP.gameOver(player0, playerAleatorio);
+        }
     }
 
     public void dosJugadores() {
