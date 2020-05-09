@@ -66,10 +66,6 @@ public class JuegoHP {
         harry.setPoderInicial(parsel);
         JuegoHP.PersonajesLista.add(harry);
 
-        Elfo dobby = new Elfo("Dobby", 100, 60, 150, listaDobby);
-        dobby.setPoderInicial(metamorfosis);
-        JuegoHP.PersonajesLista.add(dobby);
-
         Wizard hermy = new Wizard("Hermione Granger", 100, 17, 150, false, listaHermione, cometa140);
         hermy.setPoderInicial(parsel);
         hermy.setArtefacto(giratiempo);
@@ -78,11 +74,6 @@ public class JuegoHP {
         Wizard ron = new Wizard("Ron Weasley", 100, 17, 150, false, listaRon, barredora11);
         ron.setArtefacto(varFresno);
         JuegoHP.PersonajesLista.add(ron);
-
-        Wizard draquito = new Wizard("Draco Malfoy", 100, 17, 150, true, listaDraco, cometa140);
-        draquito.setPoderInicial(hechizo);
-        draquito.setArtefacto(varEspino);
-        JuegoHP.PersonajesLista.add(draquito);
 
         Wizard lunita = new Wizard("Luna Lovegood", 100, 16, 150, false, listaLuna, nimbus3000);
         lunita.setPoderInicial(hechizo);
@@ -94,32 +85,40 @@ public class JuegoHP {
         newtty.setArtefacto(varFresno);
         JuegoHP.PersonajesLista.add(newtty);
 
-        Wizard voldy = new Wizard("Lord Voldemort", 100, 71, 150, true, listaVoldy ,saetaDeFuego );
-        voldy.setPoderInicial(parsel);
-        voldy.setArtefacto(horrocruxy);
-        JuegoHP.PersonajesLista.add(voldy);
-
         Wizard dumby = new Wizard("Albus Dumbledore", 75, 116, 150, false, listaDumby, cometa140 );
         dumby.setPoderInicial(hechizo);
         dumby.setArtefacto(varSauco);
         JuegoHP.PersonajesLista.add(dumby);
 
-        Muggle dudley = new Muggle("Dudley Dursley", 80, 18);
-        JuegoHP.PersonajesLista.add(dudley);
+        Wizard draquito = new Wizard("Draco Malfoy", 100, 17, 150, true, listaDraco, cometa140);
+        draquito.setPoderInicial(hechizo);
+        draquito.setArtefacto(varEspino);
+        JuegoHP.PersonajesLista.add(draquito);
 
         Wizard snapey = new Wizard("Severus Snape", 90, 38, 150, true, listaSnapy, barredora11);
         snapey.setPoderInicial(hechizo);
         snapey.setArtefacto(varEspino);
         JuegoHP.PersonajesLista.add(snapey);
 
-        Elfo kreachy = new Elfo("Kreacher", 50, 666, 150, listaKreachy);
-        kreachy.setPoderInicial(invisibilidad);
-        JuegoHP.PersonajesLista.add(kreachy);
+        Wizard voldy = new Wizard("Lord Voldemort", 100, 71, 150, true, listaVoldy ,saetaDeFuego );
+        voldy.setPoderInicial(parsel);
+        voldy.setArtefacto(horrocruxy);
 
         Wizard bella = new Wizard("Bellatrix Lestrange", 100, 47, 150, true, listaBella, nimbus3000);
         bella.setPoderInicial(hechizo);
         bella.setArtefacto(varEspino);
         JuegoHP.PersonajesLista.add(bella);
+        
+        Elfo dobby = new Elfo("Dobby", 100, 60, 150, listaDobby);
+        dobby.setPoderInicial(metamorfosis);
+        JuegoHP.PersonajesLista.add(dobby);
+
+        Elfo kreachy = new Elfo("Kreacher", 50, 666, 150, listaKreachy);
+        kreachy.setPoderInicial(invisibilidad);
+        JuegoHP.PersonajesLista.add(kreachy);
+
+        Muggle dudley = new Muggle("Dudley Dursley", 80, 18);
+        JuegoHP.PersonajesLista.add(dudley);
 
     }
 
