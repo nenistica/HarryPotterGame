@@ -359,6 +359,8 @@ public class JuegoHP {
                 turnoAtacar = !turnoAtacar;
 
             }
+            JuegoHP.gameOver(player0, playerAleatorio);
+
 
         }
         
