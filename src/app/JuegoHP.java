@@ -181,7 +181,7 @@ public class JuegoHP {
         JuegoHP.agregarHechizos();
     }
 
-
+    //si el wizard los players son Wizard entonces se imprimen el nombre de sus escobas
     public static void mostrarEscobas(Personaje player1,Personaje player2){
             if(player1 instanceof Wizard){
                 Escoba escobaPlayer1 = ((Wizard) player1).getEscoba();
@@ -194,6 +194,7 @@ public class JuegoHP {
 
     }
 
+    //se recibe un string nombre y se busca en la lista de Peronajes y si el string coincide con el nombre personaje, se retorna el personaje de Clase Personaje
     public static Personaje getPersonajeByName(String nombre) {
         for (Personaje personaje : PersonajesLista) {
             if (nombre.equalsIgnoreCase(personaje.getNombre())) {
@@ -204,7 +205,8 @@ public class JuegoHP {
         return null;
 
     }
-
+    //Se instacia a que el usuario escriba el nombre (string) del personaje que desea jugar, y llamamos al metodo getPersonajeByName()
+    // con ese nombre lo buscaría al personaje
     public static Personaje seleccionaPersonaje() {
         String Opcion;
         System.out.println("Escribe el nombre del personaje que quieras seleccionar tal cual sale en la lista: ");
@@ -212,15 +214,15 @@ public class JuegoHP {
         return getPersonajeByName(Opcion);
 
     }   
-
+    // se hace un for each loop para imprimir todos los personajes de la lista
     public static void mostrarListaPersonajes() {
         System.out.println("LISTA DE PERSONAJES");
         for (Personaje persona : JuegoHP.PersonajesLista) {
             System.out.println(persona.getNombre());
         }
     }
-
-    public static Hechizo elegirHechizo() { // Preguntar el forloop para imprimir la lista de hechizos.
+    // Se pide al usuario que escriba el nombre del hechizo, para despues string hechizo buscar con for each loop el hechizo correspondiente para retornarlo
+    public static Hechizo elegirHechizo() {
         String nombreH;
         System.out.println(ANSI_BLUE +"Escribe el nombre del hechizo: " + ANSI_RESET);
         nombreH = Teclado.nextLine();
@@ -240,7 +242,7 @@ public class JuegoHP {
 
         return null;
     }
-
+    //Se hace for loop para imprimir el nombre de cada hechizo en la lista de hechizos
     public static void listaHechizosAtaques() {
         System.out.println(ANSI_RESET + "LISTA HECHIZOS DE ATAQUE" + ANSI_RED);
         for (int i = 0; i < JuegoHP.HechizosAtaque.size(); i++) {
@@ -248,7 +250,7 @@ public class JuegoHP {
             System.out.println(h.nombrePoder);
         }
     }
-
+    //Se hace for loop para imprimir el nombre de cada hechizo en la lista de hechizos
     public static void listaHechizosDefensa() {
         System.out.println(ANSI_RESET + "LISTA HECHIZOS DE DEFENSA Y CURACIÓN" + ANSI_GREEN);
         for (int i = 0; i < JuegoHP.HechizosDefensayCuracion.size(); i++) {
@@ -262,6 +264,8 @@ public class JuegoHP {
 
     public static Random randomAtaque; // Personaje BOT
 
+    //Se recibe un player para poder revisar con un foor loop y si el nombre coincide con una de la lista PersonajesLista
+    // entonces no lo agrega a la lista PersonajeExcluido (sería una lista más pequeña que PersonajeLista)
     public static List<Personaje> excluirPersonaje(Personaje player1){
         String nombrePersonaje = player1.getNombre();
         for (Personaje personaje : JuegoHP.PersonajesLista) {
@@ -272,14 +276,14 @@ public class JuegoHP {
         }
         return PersonajesExcluido;
     }
-
+    //Se elige un personaje aleatoria y se recibe al player 1 de la lista PersonajeExcluido creada a partir del metodo excluirPersonaje()
     public static Personaje elegirPersonajeAleatorio(Personaje player) {
         randomPersonaje = new Random();
         List<Personaje> Excluido = excluirPersonaje(player);
         Personaje personajeAleatorio = Excluido.get(randomPersonaje.nextInt(Excluido.size() - 1));
         return personajeAleatorio;
     }
-
+    //Se elige hechizo aleatorio de la lista ListaHechizos
     public static HechizoAtaque elegirHechizoAtaqueAleatorio() {
         randomAtaque = new Random();
         HechizoAtaque hechizoAtaqueAleatorio = HechizosAtaque.get(randomAtaque.nextInt(HechizosAtaque.size() - 1));
@@ -287,13 +291,13 @@ public class JuegoHP {
     }
 
     public static Random randomDefensa; // Personaje BOT
-
+    //Se elige hechizo aleatorio de la lista ListaHechizos
     public static Hechizo elegirHechizosDefensayCuracionAleatorio() {
         randomDefensa = new Random();
         Hechizo HechizosDefensayCuracionAleatorio = HechizosDefensayCuracion.get(randomDefensa.nextInt(HechizosDefensayCuracion.size() - 1));
         return HechizosDefensayCuracionAleatorio;
     }
-
+    //Se verifica cúal personaje está vivo, para indicarle que ganó el duelo.
     public static void gameOver(Personaje player1, Personaje player2) {
         if (player1.estaVivo()) {
             System.out.println("\nEl ganador es: " + player1.getNombre());
@@ -320,13 +324,12 @@ public class JuegoHP {
         System.out.println("Tu contrincante es " + playerAleatorio.getNombre()+"\n");
 
         JuegoHP.mostrarEscobas(player0,playerAleatorio);
-
+        //Verificamos si ambos players hacen magia
         if (player0 instanceof IHaceMagia && playerAleatorio instanceof IHaceMagia) {
-
+            //Mientras ambos playes estén vivos, entonces se repetirá el ciclo hasta que alguno muera
             while (player0.estaVivo() && playerAleatorio.estaVivo()) {
-                if (turnoAtacar) {
-
-                    if (turnoP1) {
+                if (turnoAtacar) {//Verificamos si el turno es de atacar o defender
+                    if (turnoP1) {//Verificamos si es el turno del player1
                         System.out.println(ANSI_RED + "\nTurno de Ataque para el jugador " + ANSI_RESET + player0.getNombre() + ANSI_RED);
                         JuegoHP.listaHechizosAtaques();
                         Hechizo hechizo1 = JuegoHP.elegirHechizo();
@@ -334,7 +337,7 @@ public class JuegoHP {
                         ((IHaceMagia) player0).atacar(playerAleatorio, hechizo1);
                         System.out.println("\nLa salud de " + playerAleatorio.getNombre() + " es: " + playerAleatorio.getSalud());
                         System.out.println("\nLa salud de " + player0.getNombre() + " es: " + player0.getSalud());
-                    } else {
+                    } else {//Turno para el player2
                         System.out.println(ANSI_RED + "\nTurno de Ataque para el jugador " + ANSI_RESET + playerAleatorio.getNombre() + ANSI_RED);
                         JuegoHP.listaHechizosAtaques();
                         Hechizo hechizo2 = JuegoHP.elegirHechizoAtaqueAleatorio();
@@ -346,11 +349,11 @@ public class JuegoHP {
                                 
                     }
 
-                    turnoP1 = !turnoP1;
+                    turnoP1 = !turnoP1;//Cambia el turno para el otro jugador
 
-                } else {
+                } else {//Se cumple que el turno es para Defender
 
-                    if (turnoP1) {
+                    if (turnoP1) {//Verificamos si es el turno del player1
                         System.out.println(ANSI_GREEN + "\nTurno de Defensa para el jugador: " + ANSI_RESET + player0.getNombre() + ANSI_GREEN);
                         JuegoHP.listaHechizosDefensa();
                         Hechizo hechizo1 = JuegoHP.elegirHechizo();
@@ -358,7 +361,7 @@ public class JuegoHP {
                         System.out.println("\nLa salud de " + playerAleatorio.getNombre() + " es: " + playerAleatorio.getSalud());
                         System.out.println("La salud de " + player0.getNombre() + " es: " + player0.getSalud()+ ANSI_RESET );
 
-                    } else {
+                    } else {//Se cumple el turno de defensa del player2
                         System.out.println(ANSI_GREEN + "\nTurno de Defensa para el jugador: "+ ANSI_RESET + playerAleatorio.getNombre()+ ANSI_GREEN);
                         JuegoHP.listaHechizosDefensa();
                         Hechizo hechizo2 = JuegoHP.elegirHechizosDefensayCuracionAleatorio();
@@ -371,17 +374,17 @@ public class JuegoHP {
 
                 }
 
-                turnoAtacar = !turnoAtacar;
+                turnoAtacar = !turnoAtacar;//Pasa de turno de Ataque a Defensa, o de Defensa a Ataque
 
             }
-            JuegoHP.gameOver(player0, playerAleatorio);
+            JuegoHP.gameOver(player0, playerAleatorio);//Llamamos a GameOver para ver cual de los players ganó
 
 
         }
-        
+        //Metodo para alguno de los jugadores es Muggle
         if (!(player0 instanceof IHaceMagia) || !(playerAleatorio instanceof IHaceMagia)) {
-            while (player0.estaVivo() && playerAleatorio.estaVivo()) {
-                if (player0 instanceof IHaceMagia) {
+            while (player0.estaVivo() && playerAleatorio.estaVivo()) {//Verificamos que ambos players estén vivos
+                if (player0 instanceof IHaceMagia) {//Si el player1 Hace Magia, entonces ataca
                     System.out.println(ANSI_RED + "\nTurno de Ataque para el jugador: " + ANSI_RESET + player0.getNombre() + ANSI_RED);
                     JuegoHP.listaHechizosAtaques();
                     Hechizo hechizo1 = JuegoHP.elegirHechizo();
@@ -391,7 +394,7 @@ public class JuegoHP {
                     System.out.println("La salud de " + player0.getNombre() + " es: " + player0.getSalud());
                     System.out.println("¡" + playerAleatorio.getNombre() + "es un muggle y no puede realizar hechizos!");
                     
-                }else{
+                }else{//Si el player2 hace magia entonces atacar
                     System.out.println(ANSI_RED + "\nTurno de Ataque para el jugador:" + ANSI_RESET + playerAleatorio.getNombre()+ ANSI_RED);
                     JuegoHP.listaHechizosAtaques();
                     Hechizo hechizo2 = JuegoHP.elegirHechizo();
@@ -401,36 +404,37 @@ public class JuegoHP {
                     System.out.println("La salud de " + playerAleatorio.getNombre() + " es: " + playerAleatorio.getSalud()+ ANSI_RESET); 
                     System.out.println("¡" + player0.getNombre() + " es un muggle y no puede realizar hechizos!");
                 }
+                //No hay turno para el jugador Muggle porque no puede realizar magia
                 
             }
 
-        JuegoHP.gameOver(player0, playerAleatorio);
+        JuegoHP.gameOver(player0, playerAleatorio);//Chequeamos cúal jugador ganó
         }
     }
 
     public void dosJugadores() {
         JuegoHP.inicioJuegoHP();
+        //Se seleccionan tanto player1 como player2
         Personaje player1 = JuegoHP.seleccionaPersonaje();
         Personaje player2 = JuegoHP.seleccionaPersonaje();
         System.out.println("\n");
-        JuegoHP.mostrarEscobas(player1,player2);
-        if (player1 instanceof IHaceMagia && player2 instanceof IHaceMagia) {
+        JuegoHP.mostrarEscobas(player1,player2);//Si alguno es Wizard, se imprimem el nombre de las escobas
+        if (player1 instanceof IHaceMagia && player2 instanceof IHaceMagia) {//Verificamos si ambbos players hacen magia
             
-    
-
+            //Mientras ambos jugadores estén vivos, se cumple el ciclo, si alguno muere, se sale del loop
             while (player1.estaVivo() && player2.estaVivo()) {
-                if (turnoAtacar) {
+                if (turnoAtacar) {//Verificamos si el turno es de Ataque
 
-                    if (turnoP1) {
+                    if (turnoP1) {//Verificamos si es el turno del player1
                         System.out.println(ANSI_RED + "\nTurno de Ataque para el jugador: " + ANSI_RESET + player1.getNombre()+ ANSI_RED);
-                        JuegoHP.listaHechizosAtaques();
-                        Hechizo hechizo1 = JuegoHP.elegirHechizo();
-                        ((IHaceMagia) player1).aprender(hechizo1);
-                        ((IHaceMagia) player1).atacar(player2, hechizo1);
+                        JuegoHP.listaHechizosAtaques();//Imprime lista de hechizo de Ataque
+                        Hechizo hechizo1 = JuegoHP.elegirHechizo();//Se escribe el hechizo y se retorna el objeto hechizo correspondiente
+                        ((IHaceMagia) player1).aprender(hechizo1);// Se agrega el hechizo a su lista individual de Hechizos aprendidos
+                        ((IHaceMagia) player1).atacar(player2, hechizo1);//Se ataca al player2 con el hechizo antes seleccionado
                         System.out.println("\nLa salud de " + player2.getNombre() + " es: " + player2.getSalud());
                         System.out.println("La salud de " + player1.getNombre() + " es: " + player1.getSalud());
 
-                    } else {
+                    } else {//Se cumple que es el turno del player2
                         System.out.println(ANSI_RED + "\nTurno de Ataque para el jugador:" + ANSI_RESET + player2.getNombre()+ ANSI_RED);
                         JuegoHP.listaHechizosAtaques();
                         Hechizo hechizo2 = JuegoHP.elegirHechizo();
@@ -440,11 +444,11 @@ public class JuegoHP {
                         System.out.println("La salud de " + player2.getNombre() + " es: " + player2.getSalud()+ ANSI_RESET);
                     }
 
-                    turnoP1 = !turnoP1;
+                    turnoP1 = !turnoP1;//Se cambia el turno del player
 
-                } else {
+                } else {//Se cumple que es el Turno de Defender
 
-                    if (turnoP1) {
+                    if (turnoP1) {//Verificamos si es el turno del player1
                         System.out.println(ANSI_GREEN + "\nTurno de Defensa para el jugador: "+ ANSI_RESET + player1.getNombre()+ ANSI_GREEN);
                         JuegoHP.listaHechizosDefensa();
                         Hechizo hechizo1 = JuegoHP.elegirHechizo();
@@ -452,26 +456,27 @@ public class JuegoHP {
                         System.out.println("\nLa salud de " + player2.getNombre() + " es: " + player2.getSalud());
                         System.out.println("La salud de " + player1.getNombre() + " es: " + player1.getSalud()+ ANSI_RESET );
 
-                    } else {
+                    } else {//Turno del player2
                         System.out.println(ANSI_GREEN + "\nTurno de Defensa para el jugador: "+ ANSI_RESET + player2.getNombre()+ ANSI_GREEN);
-                        JuegoHP.listaHechizosDefensa();
-                        Hechizo hechizo2 = JuegoHP.elegirHechizo();
-                        ((IHaceMagia) player2).atacar(player1, hechizo2);
-                        ((IHaceMagia) player2).aprender(hechizo2);
+                        JuegoHP.listaHechizosDefensa();// Se imprime la lista de hechizos
+                        Hechizo hechizo2 = JuegoHP.elegirHechizo();//Se elige el hechizo correspondiente
+                        ((IHaceMagia) player2).atacar(player1, hechizo2);//Se defiende del player2 con el hechizo elegido
+                        ((IHaceMagia) player2).aprender(hechizo2);// Se agrega el hechizo a su lista individual de Hechizos aprendidos
                         System.out.println("\nLa salud de " + player1.getNombre() + " es: " + player1.getSalud());
                         System.out.println("La salud de " + player2.getNombre() + " es: " + player2.getSalud()+ ANSI_RESET );
                     }
 
                 }
 
-                turnoAtacar = !turnoAtacar;
+                turnoAtacar = !turnoAtacar;//Cambia el turno de Atacar a Defender, o de Defender a Atacar
 
             }
           
         }
+        //Modo dos jugadores pero alguno de ellos es Muggle
         if (!(player1 instanceof IHaceMagia) || !(player2 instanceof IHaceMagia)) {
-            while (player1.estaVivo() && player2.estaVivo()) {
-                if (player1 instanceof IHaceMagia) {
+            while (player1.estaVivo() && player2.estaVivo()) {//Se sigue en el ciclo si ambos jugadores están vivos, cuando alguno muere se sale del loop
+                if (player1 instanceof IHaceMagia) {//Si el player1 hace Magia, entonces ataca
                     System.out.println(ANSI_RED + "\nTurno de Ataque para el jugador: " + ANSI_RESET + player1.getNombre() + ANSI_RED);
                     JuegoHP.listaHechizosAtaques();
                     Hechizo hechizo1 = JuegoHP.elegirHechizo();
@@ -481,7 +486,7 @@ public class JuegoHP {
                     System.out.println("La salud de " + player1.getNombre() + " es: " + player1.getSalud());
                     System.out.println("¡" + player2.getNombre() + "es un muggle y no puede realizar hechizos!");
                     
-                }else{
+                }else{//Si es el player2 que Hace Magia, entonces es el que Ataca
                     System.out.println(ANSI_RED + "\nTurno de Ataque para el jugador:" + ANSI_RESET + player2.getNombre()+ ANSI_RED);
                     JuegoHP.listaHechizosAtaques();
                     Hechizo hechizo2 = JuegoHP.elegirHechizo();
@@ -491,12 +496,13 @@ public class JuegoHP {
                     System.out.println("La salud de " + player2.getNombre() + " es: " + player2.getSalud()+ ANSI_RESET); 
                     System.out.println("¡" + player1.getNombre() + " es un muggle y no puede realizar hechizos!");
                 }
+                //El player que es Muggle no tiene turno de atacar porque no puede realizar hechizos
                 
             }
 
         }
 
-        JuegoHP.gameOver(player1, player2);
+        JuegoHP.gameOver(player1, player2);//Chequeamos cúal jugador ganó
 
     }
 
