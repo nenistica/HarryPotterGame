@@ -5,5 +5,3 @@ public interface IReliquiaMuerte {
     boolean esReliquiaMuerte();
 
 }
-
-

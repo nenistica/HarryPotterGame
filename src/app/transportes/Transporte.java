@@ -4,7 +4,7 @@ import app.interfaces.IEsMagico;
 
 public abstract class Transporte implements IEsMagico {
 
-    // Attr
+    // Atributos
     public String nombreDeTransporte;
 
     // Constructores
@@ -29,7 +29,5 @@ public abstract class Transporte implements IEsMagico {
 
         return false;
     }
-
-    
 
 }

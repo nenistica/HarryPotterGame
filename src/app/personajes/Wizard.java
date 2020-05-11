@@ -28,7 +28,7 @@ public class Wizard extends Persona implements IHaceMagia {
         this.escoba = escoba;
     }
 
-    public Escoba getEscoba(){
+    public Escoba getEscoba() {
         return escoba;
     }
 
@@ -53,14 +53,14 @@ public class Wizard extends Persona implements IHaceMagia {
     public void atacar(Personaje personaje, String hechizo) {
         for (HechizoAtaque hechizoAtaque : JuegoHP.HechizosAtaque) {
             if (hechizo.equalsIgnoreCase(hechizoAtaque.nombrePoder)) {
-                atacar(personaje,hechizoAtaque);
+                atacar(personaje, hechizoAtaque);
             }
 
         }
 
         for (Hechizo HechizosDefensayCur : JuegoHP.HechizosDefensayCuracion) {
             if (hechizo.equalsIgnoreCase(HechizosDefensayCur.nombrePoder)) {
-                atacar(personaje,HechizosDefensayCur);
+                atacar(personaje, HechizosDefensayCur);
             }
 
         }
@@ -82,17 +82,23 @@ public class Wizard extends Persona implements IHaceMagia {
     @Override
     public void aprender(Hechizo h) {
         if (!hechizo.contains(h)) {
-           this.hechizo.add(h); 
+            this.hechizo.add(h);
         }
-        
 
     }
+
+    // Metodo Atacar: El personaje que recibe al método es la víctima a quien se le
+    // va a lanzar el hechizo, quien también recibe.
+    // Lo que hace el método es restarle a la salud de la víctima el daño del
+    // hechizo y luego setearle esa salud a la víctima.
+    // Si el hechizo tiene curación, entonces se le incrementa la salud al atacante,
+    // que sería el Wizard.
 
     @Override
     public void atacar(Personaje personaje, Hechizo hechizo) {
         // buscar el nivelDanio de hechizo y se lo resta a la salud de personaje
-        if (this.getEnergiaMagica() >= hechizo.energiaMagicaHechizo) { 
-            
+        if (this.getEnergiaMagica() >= hechizo.energiaMagicaHechizo) {
+
             int energiaMagicaPlayer = this.getEnergiaMagica();
             energiaMagicaPlayer -= hechizo.energiaMagicaHechizo;
             this.setEnergiaMagica(energiaMagicaPlayer);
@@ -101,51 +107,52 @@ public class Wizard extends Persona implements IHaceMagia {
 
                 this.magoOscuro = true;
                 double saludVictima = (double) personaje.getSalud();
-                if ( personaje instanceof Wizard){
+                if (personaje instanceof Wizard) {
                     Artefacto artefactoVictima = ((IHaceMagia) personaje).getArtefacto();
-                    saludVictima -= (2*(hechizo.nivelDanio)*(1+this.artefacto.amplificadorDeDanio))*(1-artefactoVictima.amplificadorDeCuracion);
-                } else{
-                    saludVictima -= (2*(hechizo.nivelDanio)*(1+this.artefacto.amplificadorDeDanio));
+                    saludVictima -= (2 * (hechizo.nivelDanio) * (1 + this.artefacto.amplificadorDeDanio))
+                            * (1 - artefactoVictima.amplificadorDeCuracion);
+                } else {
+                    saludVictima -= (2 * (hechizo.nivelDanio) * (1 + this.artefacto.amplificadorDeDanio));
                 }
-                if (saludVictima >= 0){
+                if (saludVictima >= 0) {
                     personaje.setSalud((int) saludVictima);
-                } else{
+                } else {
                     personaje.setSalud(0);
                 }
                 double saludAtacante = (double) this.getSalud();
-                saludAtacante += (2*(hechizo.nivelCuracion)*(1+this.artefacto.amplificadorDeCuracion));
+                saludAtacante += (2 * (hechizo.nivelCuracion) * (1 + this.artefacto.amplificadorDeCuracion));
                 if (saludAtacante <= 100) {
-                  this.setSalud((int) saludAtacante);  
-                }else{
+                    this.setSalud((int) saludAtacante);
+                } else {
                     this.setSalud(100);
                 }
-                
-    
+
             } else {
 
                 double saludVictima = (double) personaje.getSalud();
-                if ( personaje instanceof Wizard){
+                if (personaje instanceof Wizard) {
                     Artefacto artefactoVictima = ((IHaceMagia) personaje).getArtefacto();
-                    saludVictima -= (hechizo.nivelDanio)*(1+this.artefacto.amplificadorDeDanio)*(1-artefactoVictima.amplificadorDeCuracion);
-                } else{
-                    saludVictima -= (hechizo.nivelDanio)*(1+this.artefacto.amplificadorDeDanio);
+                    saludVictima -= (hechizo.nivelDanio) * (1 + this.artefacto.amplificadorDeDanio)
+                            * (1 - artefactoVictima.amplificadorDeCuracion);
+                } else {
+                    saludVictima -= (hechizo.nivelDanio) * (1 + this.artefacto.amplificadorDeDanio);
                 }
-                if (saludVictima >= 0){
+                if (saludVictima >= 0) {
                     personaje.setSalud((int) saludVictima);
-                } else{
+                } else {
                     personaje.setSalud(0);
                 }
                 double saludAtacante = (double) this.getSalud();
-                saludAtacante += (hechizo.nivelCuracion)*(1+this.artefacto.amplificadorDeCuracion);
+                saludAtacante += (hechizo.nivelCuracion) * (1 + this.artefacto.amplificadorDeCuracion);
                 this.setSalud((int) saludAtacante);
                 if (saludAtacante <= 100) {
-                    this.setSalud((int) saludAtacante);  
-                  }else{
-                      this.setSalud(100);
-                  }
+                    this.setSalud((int) saludAtacante);
+                } else {
+                    this.setSalud(100);
+                }
 
             }
-        }else{
+        } else {
             System.out.println("No tienes suficiente energia mágica para realizar el hechizo.");
         }
     }
