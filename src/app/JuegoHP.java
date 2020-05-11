@@ -41,6 +41,7 @@ public class JuegoHP {
         Artefacto varEspino = new Varita("Varita de Espino", 0.3, 0.1, hechizo);
         Artefacto varSauco = new Varita("Varita de Sauco", 1, 0.5, hechizo);
         Artefacto horrocruxy = new Horrocrux("Horrocrux", 0.9, 0, hechizo);
+        Artefacto piedry = new PiedraResurreccion("Piedra de Resurrección",0 , 0.6, hechizo);
         
         Escoba nimbus3000 = new Escoba("Nimbus 3000");
         Escoba saetaDeFuego = new Escoba("Saeta De Fuego");
@@ -106,7 +107,7 @@ public class JuegoHP {
 
         Wizard bella = new Wizard("Bellatrix Lestrange", 100, 47, 150, true, listaBella, nimbus3000);
         bella.setPoderInicial(hechizo);
-        bella.setArtefacto(varEspino);
+        bella.setArtefacto(piedry);
         JuegoHP.PersonajesLista.add(bella);
         
         Elfo dobby = new Elfo("Dobby", 100, 60, 150, listaDobby);
